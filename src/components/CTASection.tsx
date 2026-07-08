@@ -11,12 +11,12 @@ export default function CTASection() {
         initial="hidden"
         whileInView="show"
         viewport={revealViewport}
-        className="relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-brand-700/40 via-ink-800 to-ink-900 px-8 py-16 text-center sm:px-16"
+        className="section-gradient relative overflow-hidden rounded-card border border-white/[0.12] px-8 py-16 text-center shadow-glass sm:px-16"
       >
         <div className="pointer-events-none absolute inset-0 bg-grid-fade bg-[size:32px_32px] opacity-40 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
         <motion.div
           aria-hidden
-          className="pointer-events-none absolute -right-10 -top-10 h-52 w-52 rounded-full bg-accent-500/20 blur-3xl"
+          className="pointer-events-none absolute -right-10 -top-10 h-52 w-52 rounded-full bg-brand-500/20 blur-3xl"
           animate={{ scale: [1, 1.2, 1] }}
           transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
         />

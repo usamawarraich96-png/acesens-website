@@ -47,12 +47,16 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
-        display: ['Poppins', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        display: ['"Space Grotesk"', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      },
+      borderRadius: {
+        card: '1rem', // 16px — single consistent card radius
       },
       boxShadow: {
-        glow: '0 0 60px -12px rgba(59,130,246,0.6)',
-        'glow-accent': '0 0 45px -10px rgba(79,163,245,0.55)',
-        glass: '0 8px 40px -12px rgba(0,0,0,0.6), inset 0 1px 0 0 rgba(255,255,255,0.04)',
+        glow: '0 0 40px -10px rgba(59,130,246,0.55)',
+        'glow-accent': '0 0 30px -8px rgba(79,163,245,0.5)',
+        glass:
+          '0 10px 40px -14px rgba(0,0,0,0.7), inset 0 1px 0 0 rgba(255,255,255,0.14)',
       },
       backgroundImage: {
         'grid-fade':

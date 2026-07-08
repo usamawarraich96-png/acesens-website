@@ -9,6 +9,7 @@ import Page from '../components/Page'
 import ReviewsMarquee from '../components/ReviewsMarquee'
 import SectionHeading from '../components/SectionHeading'
 import StatItem from '../components/StatItem'
+import TopicArt from '../components/Illustration'
 import { fadeUp, revealViewport, staggerContainer } from '../lib/motion'
 import { projects, serviceCategories, stats, steps, trustedBrands } from '../data/site'
 
@@ -24,7 +25,7 @@ function Hero() {
 
           <motion.h1
             variants={fadeUp}
-            className="mt-4 font-display text-4xl font-extrabold uppercase leading-[1.05] tracking-wide text-white sm:text-6xl"
+            className="mt-4 font-display text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl"
           >
             Engineering
             <br />
@@ -91,140 +92,100 @@ function Stats() {
   )
 }
 
-function ServiceImage({ icon, index }: { icon: string; index: number }) {
-  const grads = [
-    'from-brand-500/30 to-brand-700/10',
-    'from-brand-400/25 to-brand-600/10',
-    'from-brand-600/30 to-brand-800/10',
-  ]
-  return (
-    <div
-      className={`relative aspect-[16/9] overflow-hidden rounded-xl bg-gradient-to-br ${grads[index % 3]} ring-1 ring-white/10`}
-    >
-      <div className="absolute inset-0 bg-grid-fade bg-[size:24px_24px] opacity-40" />
-      <div className="absolute -right-6 -top-6 h-28 w-28 rounded-full bg-brand-500/30 blur-2xl" />
-      <div className="absolute inset-0 grid place-items-center">
-        <Icon name={icon} className="h-14 w-14 text-brand-200" />
-      </div>
-    </div>
-  )
-}
-
 function Services() {
   return (
-    <section className="container-page py-24">
-      <div className="flex flex-wrap items-end justify-between gap-4">
+    <section className="section-gradient py-24">
+      <div className="container-page">
         <SectionHeading
-          align="left"
           eyebrow="Our Services"
           title="Three pillars of growth"
           subtitle="Adopt one, or let all three work together as a single growth engine."
+          link={{ label: 'View all services', to: '/services' }}
         />
-        <Link
-          to="/services"
-          className="group inline-flex items-center gap-1.5 text-sm font-semibold text-brand-400 hover:text-brand-300"
-        >
-          View all services
-          <Icon name="arrow" className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-        </Link>
-      </div>
 
-      <motion.div
-        variants={staggerContainer(0.12)}
-        initial="hidden"
-        whileInView="show"
-        viewport={revealViewport}
-        className="mt-14 grid gap-6 lg:grid-cols-3"
-      >
-        {serviceCategories.map((cat, i) => (
-          <motion.article
-            key={cat.id}
-            variants={fadeUp}
-            whileHover={{ y: -6 }}
-            transition={{ type: 'spring', stiffness: 300, damping: 22 }}
-            className="glass glass-hover flex h-full flex-col p-6"
-          >
-            <ServiceImage icon={cat.icon} index={i} />
-            <h3 className="mt-6 font-display text-xl font-bold uppercase tracking-wide text-white">
-              {cat.title}
-            </h3>
-            <p className="mt-2 text-sm text-slate-400">{cat.summary}</p>
-            <ul className="mt-5 flex-1 space-y-2">
-              {cat.items.slice(0, 5).map((item) => (
-                <li key={item.name} className="flex items-center gap-2 text-sm text-slate-300">
-                  <Icon name="check" className="h-4 w-4 flex-shrink-0 text-brand-400" />
-                  {item.name}
-                </li>
-              ))}
-            </ul>
-            <Link
-              to={`/services#${cat.id}`}
-              className="btn-ghost mt-6 w-full !py-2.5 text-sm"
+        <motion.div
+          variants={staggerContainer(0.12)}
+          initial="hidden"
+          whileInView="show"
+          viewport={revealViewport}
+          className="mt-14 grid gap-6 lg:grid-cols-3"
+        >
+          {serviceCategories.map((cat) => (
+            <motion.article
+              key={cat.id}
+              variants={fadeUp}
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 22 }}
+              className="glass glass-hover flex h-full flex-col p-5"
             >
-              Explore
-              <Icon name="arrow" className="h-4 w-4" />
-            </Link>
-          </motion.article>
-        ))}
-      </motion.div>
+              <div className="overflow-hidden rounded-xl ring-1 ring-white/10">
+                <TopicArt id={cat.id} className="aspect-[16/9] w-full" />
+              </div>
+              <h3 className="mt-5 font-display text-xl font-bold tracking-tight text-white">
+                {cat.title}
+              </h3>
+              <p className="mt-2 text-sm text-slate-400">{cat.summary}</p>
+              <ul className="mt-5 flex-1 space-y-2">
+                {cat.items.slice(0, 5).map((item) => (
+                  <li key={item.name} className="flex items-center gap-2 text-sm text-slate-300">
+                    <Icon name="check" className="h-4 w-4 flex-shrink-0 text-brand-400" />
+                    {item.name}
+                  </li>
+                ))}
+              </ul>
+              <Link to={`/services#${cat.id}`} className="btn-ghost mt-6 w-full !py-2.5 text-sm">
+                Explore
+                <Icon name="arrow" className="h-4 w-4" />
+              </Link>
+            </motion.article>
+          ))}
+        </motion.div>
+      </div>
     </section>
   )
 }
 
 function PortfolioPreview() {
   return (
-    <section className="container-page py-24">
-      <div className="flex flex-wrap items-end justify-between gap-4">
+    <section className="py-24">
+      <div className="container-page">
         <SectionHeading
-          align="left"
           eyebrow="Our Portfolio"
           title="Work that moved the numbers"
           subtitle="A selection of engagements across our three pillars."
+          link={{ label: 'View all projects', to: '/portfolio' }}
         />
-        <Link
-          to="/portfolio"
-          className="group inline-flex items-center gap-1.5 text-sm font-semibold text-brand-400 hover:text-brand-300"
-        >
-          View all projects
-          <Icon name="arrow" className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-        </Link>
-      </div>
 
-      <motion.div
-        variants={staggerContainer(0.1)}
-        initial="hidden"
-        whileInView="show"
-        viewport={revealViewport}
-        className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
-      >
-        {projects.slice(0, 6).map((p) => (
-          <motion.article
-            key={p.title}
-            variants={fadeUp}
-            whileHover={{ y: -6 }}
-            transition={{ type: 'spring', stiffness: 300, damping: 24 }}
-            className="glass glass-hover group flex h-full flex-col overflow-hidden"
-          >
-            <div className="relative aspect-[16/10] overflow-hidden bg-gradient-to-br from-slateblue-700 to-ink-850">
-              <div className="absolute inset-0 bg-grid-fade bg-[size:24px_24px] opacity-40" />
-              <div className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-brand-500/25 blur-2xl transition-all duration-500 group-hover:bg-brand-500/40" />
-              <div className="absolute inset-0 grid place-items-center">
-                <div className="grid h-14 w-14 place-items-center rounded-2xl bg-white/5 text-brand-300 ring-1 ring-white/10 transition-transform duration-300 group-hover:scale-110">
-                  <Icon name={p.icon} className="h-7 w-7" />
-                </div>
+        <motion.div
+          variants={staggerContainer(0.1)}
+          initial="hidden"
+          whileInView="show"
+          viewport={revealViewport}
+          className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+        >
+          {projects.slice(0, 6).map((p) => (
+            <motion.article
+              key={p.title}
+              variants={fadeUp}
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: 'spring', stiffness: 300, damping: 24 }}
+              className="glass glass-hover group flex h-full flex-col overflow-hidden"
+            >
+              <div className="relative overflow-hidden">
+                <TopicArt category={p.category} className="aspect-[16/10] w-full" />
+                <span className="absolute left-3 top-3 rounded-full border border-white/15 bg-ink-950/70 px-3 py-1 text-xs font-medium text-white backdrop-blur">
+                  {p.category}
+                </span>
               </div>
-              <span className="absolute left-3 top-3 rounded-full border border-brand-400/30 bg-ink-950/70 px-3 py-1 text-xs font-medium text-brand-300 backdrop-blur">
-                {p.category}
-              </span>
-            </div>
-            <div className="flex flex-1 flex-col p-6">
-              <div className="gradient-text font-display text-2xl font-extrabold">{p.stat}</div>
-              <h3 className="mt-2 font-semibold text-white">{p.title}</h3>
-              <p className="mt-1 text-sm text-slate-400">{p.description}</p>
-            </div>
-          </motion.article>
-        ))}
-      </motion.div>
+              <div className="flex flex-1 flex-col p-6">
+                <div className="gradient-text font-display text-2xl font-bold">{p.stat}</div>
+                <h3 className="mt-2 font-semibold text-white">{p.title}</h3>
+                <p className="mt-1 text-sm text-slate-400">{p.description}</p>
+              </div>
+            </motion.article>
+          ))}
+        </motion.div>
+      </div>
     </section>
   )
 }

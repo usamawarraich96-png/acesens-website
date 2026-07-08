@@ -23,7 +23,7 @@ function Story() {
           </motion.p>
           <motion.h2
             variants={fadeUp}
-            className="mt-3 font-display text-3xl font-bold uppercase tracking-wide text-white sm:text-4xl"
+            className="mt-3 font-display text-3xl font-bold tracking-tight text-white sm:text-4xl"
           >
             We believe growth should be a system, not a gamble
           </motion.h2>
@@ -162,7 +162,8 @@ export default function About() {
     <Page>
       <PageHeader
         eyebrow="About Acesens"
-        title="A growth partner, not a vendor"
+        title="A growth partner,"
+        titleAccent="not a vendor"
         subtitle="We are a team of marketers, operators, and engineers building the growth engine for modern brands — measurable, transparent, and built to endure."
       />
       <Story />

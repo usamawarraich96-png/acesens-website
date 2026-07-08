@@ -38,7 +38,7 @@ function CategorySection({
             </motion.p>
             <motion.h2
               variants={fadeUp}
-              className="mt-2 font-display text-3xl font-bold uppercase tracking-wide text-white"
+              className="mt-2 font-display text-3xl font-bold tracking-tight text-white"
             >
               {category.title}
             </motion.h2>
@@ -124,7 +124,8 @@ export default function Services() {
     <Page>
       <PageHeader
         eyebrow="Services"
-        title="Three pillars, one growth engine"
+        title="Three pillars,"
+        titleAccent="one growth engine"
         subtitle="Acesens brings performance marketing, Amazon expertise, and custom AI together so every part of your growth compounds the others."
       />
       {serviceCategories.map((category, i) => (

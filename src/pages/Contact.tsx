@@ -145,7 +145,8 @@ export default function Contact() {
     <Page>
       <PageHeader
         eyebrow="Contact"
-        title="Let's build your growth engine"
+        title="Let's build your"
+        titleAccent="growth engine"
         subtitle="Tell us about your goals, and we'll show you how Acesens gets you there — fast."
       />
 

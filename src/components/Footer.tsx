@@ -134,10 +134,10 @@ function ContactBlock() {
       </div>
 
       {/* Ready to scale panel */}
-      <div className="relative flex flex-col justify-center overflow-hidden rounded-2xl border border-brand-400/20 bg-gradient-to-br from-brand-700/40 via-ink-800 to-ink-900 p-8 lg:col-span-2">
-        <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-brand-500/30 blur-3xl" />
+      <div className="section-gradient relative flex flex-col justify-center overflow-hidden rounded-card border border-white/[0.12] p-8 shadow-glass lg:col-span-2">
+        <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-brand-500/25 blur-3xl" />
         <div className="relative">
-          <h3 className="font-display text-2xl font-bold uppercase tracking-wide text-white">
+          <h3 className="font-display text-2xl font-bold tracking-tight text-white">
             Ready to scale your business?
           </h3>
           <p className="mt-3 text-slate-300">
@@ -206,9 +206,9 @@ export default function Footer() {
           </motion.p>
           <motion.h2
             variants={fadeUp}
-            className="mt-3 font-display text-4xl font-extrabold uppercase tracking-wide text-white sm:text-5xl"
+            className="mt-3 font-display text-4xl font-bold tracking-tight text-white sm:text-5xl"
           >
-            Let's build what's next
+            Let's build <span className="gradient-text">what's next</span>
           </motion.h2>
           <motion.p variants={fadeUp} className="mt-4 text-lg text-slate-400">
             Tell us where you want to grow. We'll bring the strategy, the systems, and the team.

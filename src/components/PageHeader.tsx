@@ -4,11 +4,14 @@ import { fadeUp, staggerContainer } from '../lib/motion'
 
 interface PageHeaderProps {
   eyebrow: string
+  /** First headline line — rendered solid white. */
   title: string
+  /** Second headline line — rendered with the blue-white gradient. */
+  titleAccent: string
   subtitle: string
 }
 
-export default function PageHeader({ eyebrow, title, subtitle }: PageHeaderProps) {
+export default function PageHeader({ eyebrow, title, titleAccent, subtitle }: PageHeaderProps) {
   return (
     <section className="relative overflow-hidden">
       <AuroraBackground />
@@ -23,9 +26,11 @@ export default function PageHeader({ eyebrow, title, subtitle }: PageHeaderProps
         </motion.p>
         <motion.h1
           variants={fadeUp}
-          className="mx-auto mt-4 max-w-3xl font-display text-4xl font-extrabold uppercase leading-tight tracking-wide text-white sm:text-5xl"
+          className="mx-auto mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl"
         >
           {title}
+          <br />
+          <span className="gradient-text">{titleAccent}</span>
         </motion.h1>
         <motion.p variants={fadeUp} className="mx-auto mt-6 max-w-2xl text-lg text-slate-400">
           {subtitle}

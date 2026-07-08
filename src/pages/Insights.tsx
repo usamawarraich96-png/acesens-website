@@ -13,7 +13,8 @@ export default function Insights() {
     <Page>
       <PageHeader
         eyebrow="Insights"
-        title="Ideas that drive growth"
+        title="Ideas that"
+        titleAccent="drive growth"
         subtitle="Playbooks, teardowns, and points of view on marketing, Amazon, and applied AI. Placeholder articles for now."
       />
 

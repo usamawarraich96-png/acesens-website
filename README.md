@@ -38,12 +38,22 @@ with **Vite + React + TypeScript + Tailwind CSS + Framer Motion**, plus a
 
 - **Backgrounds:** very dark navy-black (`#050B14`–`#0A1220`) throughout, with
   a subtle circuit/grid pattern and drifting blue glows (no photography).
-- **Panels:** glassmorphic — translucent blue-grey, a thin glowing blue
-  border, and backdrop blur (`.glass`).
-- **Accent:** rich medium blue (`#3B82F6`–`#4FA3F5`) for buttons, links, glow,
-  and gradient headline text (white → light blue-grey via `.gradient-text`).
-- **Type:** Poppins (bold, all-caps, letter-spaced) for headlines; Inter for
-  body. Body text light grey-blue, headlines white.
+- **Backgrounds:** each section uses a radial gradient — lighter toward the
+  centre (`#101F33`), fading to near-black navy (`#050B14`) at the edges.
+- **Panels:** iOS-style **white frosted glass** — a light translucent white
+  fill, a soft white hairline border, and backdrop blur (`.glass`). Accent
+  blue is confined to details inside (a stat figure, a graph line, an icon),
+  never the card surface.
+- **Accent:** rich medium blue (`#3B82F6`–`#4FA3F5`) for button fills, links,
+  stat numbers, icon strokes, and graph lines only.
+- **Type:** Space Grotesk for headlines (tight tracking on large titles,
+  uppercase wide-tracked eyebrow labels); Inter (lighter weight) for body.
+  Every page's main headline uses the two-tone gradient (white line + a
+  blue-white gradient line).
+- **Card imagery:** each Service/Portfolio card carries a topic-relevant SVG
+  illustration (`Illustration.tsx`) — an analytics dashboard with a donut
+  ring, bars and sparkline for Digital Marketing, a product/rating scene for
+  Amazon Growth, and a circuit-brain chip for AI Systems.
 - **Logo:** a scalable inline SVG (`src/components/Logo.tsx`) — blue glowing
   arc + arrow accent and a light-silver "ACESENS" wordmark legible on dark.
   Drop the exact raster in `public/` and swap the component for an `<img>` to

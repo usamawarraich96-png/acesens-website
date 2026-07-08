@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
  */
 export default function AuroraBackground() {
   return (
-    <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden bg-ink-950">
+    <div className="section-gradient pointer-events-none absolute inset-0 -z-10 overflow-hidden">
       {/* radial brand glows baked into the panel */}
       <div className="absolute inset-0 bg-circuit" />
       {/* fine grid, faded toward the edges */}
