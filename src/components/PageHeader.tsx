@@ -18,15 +18,12 @@ export default function PageHeader({ eyebrow, title, subtitle }: PageHeaderProps
         animate="show"
         className="container-page py-20 text-center lg:py-28"
       >
-        <motion.p
-          variants={fadeUp}
-          className="text-sm font-semibold uppercase tracking-[0.2em] text-accent-400"
-        >
+        <motion.p variants={fadeUp} className="eyebrow">
           {eyebrow}
         </motion.p>
         <motion.h1
           variants={fadeUp}
-          className="mx-auto mt-4 max-w-3xl text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl"
+          className="mx-auto mt-4 max-w-3xl font-display text-4xl font-extrabold uppercase leading-tight tracking-wide text-white sm:text-5xl"
         >
           {title}
         </motion.h1>

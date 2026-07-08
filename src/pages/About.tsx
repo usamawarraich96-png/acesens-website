@@ -18,25 +18,24 @@ function Story() {
           whileInView="show"
           viewport={revealViewport}
         >
-          <motion.p
-            variants={fadeUp}
-            className="text-sm font-semibold uppercase tracking-[0.2em] text-accent-400"
-          >
+          <motion.p variants={fadeUp} className="eyebrow">
             Our story
           </motion.p>
-          <motion.h2 variants={fadeUp} className="mt-3 text-3xl font-bold text-white sm:text-4xl">
-            We believe the physical world deserves better instrumentation
+          <motion.h2
+            variants={fadeUp}
+            className="mt-3 font-display text-3xl font-bold uppercase tracking-wide text-white sm:text-4xl"
+          >
+            We believe growth should be a system, not a gamble
           </motion.h2>
           <motion.p variants={fadeUp} className="mt-5 text-slate-400">
-            Acesens began with a simple frustration: the world is full of critical machines,
-            spaces, and systems that no one can truly see. Data was trapped in proprietary boxes,
-            arriving too late to matter.
+            Acesens began with a simple frustration: too many great brands were pouring money into
+            marketing that couldn't be measured, sold on marketplaces they couldn't control, and
+            drowning in manual work that software should handle.
           </motion.p>
           <motion.p variants={fadeUp} className="mt-4 text-slate-400">
-            So we set out to build sensing infrastructure that is fast, open, and trustworthy —
-            hardware and software designed together, from the silicon to the dashboard. Today our
-            platform helps operators on six continents act on what their environments are telling
-            them, in real time.
+            So we built a growth partner that connects the dots — performance marketing, Amazon
+            expertise, and custom AI systems designed together. Today we help brands on six
+            continents turn attention into revenue, and revenue into a system that compounds.
           </motion.p>
         </motion.div>
 
@@ -68,7 +67,7 @@ function Story() {
 
 function Stats() {
   return (
-    <section className="border-y border-white/10 bg-ink-900/40">
+    <section className="section-alt border-y border-white/10">
       <motion.div
         variants={staggerContainer(0.1)}
         initial="hidden"
@@ -122,7 +121,7 @@ function Values() {
 
 function Team() {
   return (
-    <section className="bg-ink-900/40 py-24">
+    <section className="section-alt py-24">
       <div className="container-page">
         <SectionHeading
           eyebrow="The people"
@@ -163,8 +162,8 @@ export default function About() {
     <Page>
       <PageHeader
         eyebrow="About Acesens"
-        title="Instrumenting the physical world, honestly"
-        subtitle="We are a team of engineers and scientists building the sensing layer for modern operations — reliable, open, and built to endure."
+        title="A growth partner, not a vendor"
+        subtitle="We are a team of marketers, operators, and engineers building the growth engine for modern brands — measurable, transparent, and built to endure."
       />
       <Story />
       <Stats />

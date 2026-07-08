@@ -1,23 +1,9 @@
 import { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion, useScroll, useMotionValueEvent } from 'framer-motion'
-import { company, navLinks } from '../data/site'
+import { navLinks } from '../data/site'
 import Icon from './Icon'
-
-function Logo() {
-  return (
-    <Link to="/" className="group flex items-center gap-2.5" aria-label={`${company.name} home`}>
-      <motion.span
-        whileHover={{ rotate: 90, scale: 1.05 }}
-        transition={{ type: 'spring', stiffness: 300, damping: 15 }}
-        className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-brand-500 to-accent-500 shadow-glow"
-      >
-        <span className="h-2.5 w-2.5 rounded-full bg-white" />
-      </motion.span>
-      <span className="text-lg font-bold tracking-tight text-white">{company.name}</span>
-    </Link>
-  )
-}
+import Logo from './Logo'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -49,7 +35,7 @@ export default function Navbar() {
         }`}
       >
         <nav className="container-page flex h-16 items-center justify-between">
-          <Logo />
+          <Logo size={32} />
 
           <ul className="hidden items-center gap-1 md:flex">
             {navLinks.map((link) => (

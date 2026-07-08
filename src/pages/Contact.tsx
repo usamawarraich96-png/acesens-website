@@ -118,7 +118,7 @@ function ContactForm() {
                 value={values.message}
                 onChange={(e) => update('message', e.target.value)}
                 className="w-full resize-none rounded-xl border border-white/10 bg-white/5 px-4 py-3 text-white outline-none transition-colors placeholder:text-slate-500 focus:border-brand-400 focus:bg-white/10"
-                placeholder="Tell us about your environment and what you'd like to sense…"
+                placeholder="Tell us about your brand and what you'd like to grow…"
               />
             </motion.div>
 
@@ -145,8 +145,8 @@ export default function Contact() {
     <Page>
       <PageHeader
         eyebrow="Contact"
-        title="Let's build your sensing layer"
-        subtitle="Tell us what you'd like to see, and we'll show you how Acesens gets you there — fast."
+        title="Let's build your growth engine"
+        subtitle="Tell us about your goals, and we'll show you how Acesens gets you there — fast."
       />
 
       <section className="container-page pb-24">
@@ -162,7 +162,7 @@ export default function Contact() {
               Talk to our team
             </motion.h2>
             <motion.p variants={fadeUp} className="mt-3 text-slate-400">
-              Whether you're scoping a pilot or scaling a fleet, we'd love to hear from you.
+              Whether you're launching a campaign or scaling a brand, we'd love to hear from you.
               Reach out and we'll respond within one business day.
             </motion.p>
 

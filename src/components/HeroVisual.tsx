@@ -8,8 +8,8 @@ const orbits = [
 ]
 
 /**
- * Interactive hero graphic: concentric sensor orbits that gently tilt toward
- * the cursor (a 3D parallax micro-interaction) while dots trace each ring.
+ * Interactive hero graphic: concentric orbits that gently tilt toward the
+ * cursor (a parallax micro-interaction) while dots trace each ring.
  */
 export default function HeroVisual() {
   const px = useMotionValue(0)
@@ -101,7 +101,7 @@ export default function HeroVisual() {
           animate={{ y: [0, -8, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
         >
-          <span className="text-accent-400">●</span> 12.4M signals/s
+          <span className="text-accent-400">●</span> 3.8x ROAS
         </motion.div>
         <motion.div
           className="absolute -left-4 bottom-8 rounded-xl border border-white/10 bg-ink-800/80 px-3 py-2 text-xs font-medium text-white backdrop-blur"
@@ -109,7 +109,7 @@ export default function HeroVisual() {
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
         >
-          <span className="text-brand-300">◆</span> 40ms latency
+          <span className="text-brand-300">◆</span> +142% growth
         </motion.div>
       </motion.div>
     </div>

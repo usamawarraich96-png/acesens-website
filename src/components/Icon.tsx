@@ -45,6 +45,44 @@ const paths: Record<string, JSX.Element> = {
   ),
   arrow: <path d="M5 12h14m-6-6l6 6-6 6" />,
   check: <path d="M5 13l4 4L19 7" />,
+  megaphone: (
+    <>
+      <path d="M4 10v4a1 1 0 0 0 1 1h2l9 4V5L7 9H5a1 1 0 0 0-1 1Z" />
+      <path d="M16 8a4 4 0 0 1 0 8" />
+      <path d="M7 15v3a1 1 0 0 0 1 1h1" />
+    </>
+  ),
+  cart: (
+    <>
+      <circle cx="9" cy="20" r="1.2" />
+      <circle cx="18" cy="20" r="1.2" />
+      <path d="M3 4h2l2.2 11a1 1 0 0 0 1 .8h8.4a1 1 0 0 0 1-.8L20 8H6" />
+    </>
+  ),
+  chip: (
+    <>
+      <rect x="7" y="7" width="10" height="10" rx="1.5" />
+      <path d="M10 10h4v4h-4z" />
+      <path d="M9 3v2m6-2v2M9 19v2m6-2v2M3 9h2m-2 6h2m14-6h2m-2 6h2" />
+    </>
+  ),
+  search: (
+    <>
+      <circle cx="11" cy="11" r="7" />
+      <path d="M21 21l-4.3-4.3" />
+    </>
+  ),
+  box: (
+    <>
+      <path d="M3 7l9-4 9 4-9 4-9-4Z" />
+      <path d="M3 7v10l9 4 9-4V7" />
+      <path d="M12 11v10" />
+    </>
+  ),
+  star: <path d="M12 3.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 17l-5.3 2.8 1.1-5.9L3.4 9.8l6-.8L12 3.5Z" />,
+  quote: (
+    <path d="M7 7H4v6h3c0 2-1 3-3 3v2c3.3 0 5-2 5-5V7Zm10 0h-3v6h3c0 2-1 3-3 3v2c3.3 0 5-2 5-5V7Z" />
+  ),
   mail: (
     <>
       <rect x="3" y="5" width="18" height="14" rx="2" />

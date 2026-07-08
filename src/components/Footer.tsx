@@ -1,19 +1,15 @@
 import { Link } from 'react-router-dom'
-import { company, navLinks, services } from '../data/site'
+import { company, navLinks, serviceCategories } from '../data/site'
 import Icon from './Icon'
+import Logo from './Logo'
 
 export default function Footer() {
   return (
-    <footer className="relative mt-24 border-t border-white/10 bg-ink-900/50">
+    <footer className="relative mt-24 border-t border-white/10 bg-ink-950">
       <div className="container-page py-16">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
-            <div className="flex items-center gap-2.5">
-              <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-to-br from-brand-500 to-accent-500">
-                <span className="h-2.5 w-2.5 rounded-full bg-white" />
-              </span>
-              <span className="text-lg font-bold text-white">{company.name}</span>
-            </div>
+            <Logo size={34} to={null} />
             <p className="mt-4 max-w-xs text-sm text-slate-400">{company.tagline}</p>
             <div className="mt-6 flex gap-3">
               {company.social.map((s) => (
@@ -52,7 +48,7 @@ export default function Footer() {
               Services
             </h3>
             <ul className="mt-4 space-y-3">
-              {services.slice(0, 4).map((s) => (
+              {serviceCategories.map((s) => (
                 <li key={s.title}>
                   <Link
                     to="/services"

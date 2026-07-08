@@ -23,16 +23,13 @@ export default function SectionHeading({
       className={`max-w-2xl ${align === 'center' ? 'mx-auto text-center' : 'text-left'}`}
     >
       {eyebrow && (
-        <motion.p
-          variants={fadeUp}
-          className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-accent-400"
-        >
+        <motion.p variants={fadeUp} className="eyebrow mb-3">
           {eyebrow}
         </motion.p>
       )}
       <motion.h2
         variants={fadeUp}
-        className="text-3xl font-bold leading-tight text-white sm:text-4xl"
+        className="font-display text-3xl font-bold uppercase leading-tight tracking-wide text-white sm:text-4xl"
       >
         {title}
       </motion.h2>

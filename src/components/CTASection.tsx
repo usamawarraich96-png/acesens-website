@@ -25,11 +25,11 @@ export default function CTASection() {
             variants={fadeUp}
             className="mx-auto max-w-2xl text-3xl font-bold text-white sm:text-4xl"
           >
-            Ready to turn your signals into decisions?
+            Ready to turn attention into revenue?
           </motion.h2>
           <motion.p variants={fadeUp} className="mx-auto mt-4 max-w-xl text-lg text-slate-300">
-            Talk to our team about a pilot. We'll map your environment and have sensors live in
-            weeks, not quarters.
+            Talk to our team about your goals. We'll map the fastest path to growth and have your
+            first campaigns live in weeks, not quarters.
           </motion.p>
           <motion.div
             variants={fadeUp}
