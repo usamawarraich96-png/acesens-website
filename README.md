@@ -2,44 +2,52 @@
 
 A modern, animated marketing site for **Acesens**, a (fictional) growth
 partner offering **Digital Marketing, Amazon Growth, and AI Systems**. Built
-with **Vite + React + TypeScript + Tailwind CSS + Framer Motion**.
+with **Vite + React + TypeScript + Tailwind CSS + Framer Motion**, plus a
+**React Three Fiber** 3D showcase.
 
 > All content is placeholder copy for demonstration purposes.
 
 ## Features
 
-- **Five pages** — Home, About, Services, Portfolio, and Contact — with a
-  shared navbar and footer.
+- **Seven pages** — Home, Services, Portfolio, Case Studies, About Us,
+  Insights, and Contact — with a shared navbar and footer.
 - **Animated navigation** with a scroll-aware bar, animated active-link
-  indicator (shared layout), and an animated mobile menu.
-- **Scroll-reveal animations** throughout via a reusable `Reveal` component
-  and staggered containers.
-- **Hero micro-interactions** — a cursor-tilting orbit graphic, floating
-  metric chips, and a pulsing core.
+  indicator (shared layout), a Services hover **dropdown**, and an animated
+  mobile menu.
+- **Scroll-reveal animations** throughout via staggered containers.
+- **Hero micro-interactions** — a cursor-tilting glass "ACESENS" cube with
+  labeled capability panels, floating stat cards (mini line/bar graphs), and
+  capability chips.
 - **Animated stat counters** that count up when scrolled into view.
+- **Custom AI Systems 3D section** — a lazy-loaded React Three Fiber scene:
+  an auto-rotating glass cube with a glowing particle-node "brain" inside on
+  a bloom-lit pedestal, surrounded by six feature cards linked by animated
+  glowing lines. Particle count is capped, the heavy scene is code-split and
+  only mounts near the viewport, and a static fallback renders for
+  `prefers-reduced-motion` or browsers without WebGL.
 - **Three service pillars** — Digital Marketing, Amazon Growth, and AI
-  Systems — each with its sub-services listed.
-- **Portfolio page** — a filterable grid of categorized case-study cards,
-  structured so real projects can be swapped in.
-- **Reviews marquee** — an infinite right-to-left auto-scrolling row of
-  client reviews that pauses on hover and freezes (becoming manually
-  scrollable) under `prefers-reduced-motion`.
-- **Page transitions** between routes with `AnimatePresence`.
-- **Interactive contact form** with an animated success state.
-- Respects `prefers-reduced-motion` throughout.
+  Systems — each shown as a large card and as its own anchored section.
+- **Portfolio** — filterable grid of categorized case-study cards.
+- **Reviews marquee** — an infinite right-to-left auto-scroll that pauses on
+  hover, freezes (becoming manually scrollable) under
+  `prefers-reduced-motion`, and has optional prev/next arrow controls.
+- **Page transitions** with `AnimatePresence`, plus hash-anchor scrolling.
+- **Interactive contact forms** (page + footer) with animated success states.
 
 ## Branding
 
-- **Backgrounds:** deep navy/charcoal (`#0B1120`–`#16213A`) for hero and
-  footer; lighter slate-blue (`#28374F`–`#2E4057`) for alternating sections.
-- **Accent:** bright cyan-blue (`#3FA9F5`–`#4FC3F7`) for glow, links, stat
-  highlights, and hover states.
+- **Backgrounds:** very dark navy-black (`#050B14`–`#0A1220`) throughout, with
+  a subtle circuit/grid pattern and drifting blue glows (no photography).
+- **Panels:** glassmorphic — translucent blue-grey, a thin glowing blue
+  border, and backdrop blur (`.glass`).
+- **Accent:** rich medium blue (`#3B82F6`–`#4FA3F5`) for buttons, links, glow,
+  and gradient headline text (white → light blue-grey via `.gradient-text`).
 - **Type:** Poppins (bold, all-caps, letter-spaced) for headlines; Inter for
-  body. Body text `#AEB8C4`, headlines near-white.
-- **Logo:** recreated as a scalable inline SVG (`src/components/Logo.tsx`) —
-  cyan glowing arc + arrow accent and a metallic "ACESENS" wordmark. To use
-  the exact raster instead, drop it in `public/` and swap the component for
-  an `<img>`.
+  body. Body text light grey-blue, headlines white.
+- **Logo:** a scalable inline SVG (`src/components/Logo.tsx`) — blue glowing
+  arc + arrow accent and a light-silver "ACESENS" wordmark legible on dark.
+  Drop the exact raster in `public/` and swap the component for an `<img>` to
+  use the original artwork.
 - Icons are simple flat/line SVGs (`src/components/Icon.tsx`).
 
 ## Tech stack
@@ -50,6 +58,7 @@ with **Vite + React + TypeScript + Tailwind CSS + Framer Motion**.
 | React + TypeScript | UI & type safety |
 | Tailwind CSS | Styling / design system |
 | Framer Motion | Animation & motion |
+| React Three Fiber + drei + postprocessing | 3D Custom AI Systems showcase |
 | React Router | Client-side routing |
 
 ## Getting started
@@ -65,8 +74,9 @@ npm run preview  # preview the production build
 
 ```
 src/
-  components/   Reusable UI (Navbar, Footer, Logo, hero visual, marquee, …)
-  pages/        Home, About, Services, Portfolio, Contact
-  data/         Placeholder site content (services, projects, reviews, …)
-  lib/          Shared Framer Motion variants
+  components/      Reusable UI (Navbar, Footer, Logo, hero visual, marquee, …)
+    ai/CubeScene   Lazy-loaded React Three Fiber 3D scene
+  pages/           Home, Services, Portfolio, CaseStudies, About, Insights, Contact
+  data/            Placeholder site content (services, projects, reviews, …)
+  lib/             Shared Framer Motion variants
 ```

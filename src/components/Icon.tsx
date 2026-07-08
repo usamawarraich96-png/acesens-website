@@ -80,6 +80,20 @@ const paths: Record<string, JSX.Element> = {
     </>
   ),
   star: <path d="M12 3.5l2.6 5.5 6 .8-4.4 4.1 1.1 5.9L12 17l-5.3 2.8 1.1-5.9L3.4 9.8l6-.8L12 3.5Z" />,
+  bars: (
+    <>
+      <path d="M4 20V10m5 10V4m5 16v-7m5 7V8" />
+    </>
+  ),
+  line: <path d="M4 15l4-5 4 3 5-8 3 4" />,
+  bolt: <path d="M13 2L4 14h6l-1 8 9-12h-6l1-8Z" />,
+  chevron: <path d="M6 9l6 6 6-6" />,
+  layers: (
+    <>
+      <path d="M12 3l9 5-9 5-9-5 9-5Z" />
+      <path d="M3 13l9 5 9-5" />
+    </>
+  ),
   quote: (
     <path d="M7 7H4v6h3c0 2-1 3-3 3v2c3.3 0 5-2 5-5V7Zm10 0h-3v6h3c0 2-1 3-3 3v2c3.3 0 5-2 5-5V7Z" />
   ),

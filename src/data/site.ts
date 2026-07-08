@@ -14,12 +14,46 @@ export const company = {
   ],
 }
 
-export const navLinks = [
+export interface NavLink {
+  label: string
+  to: string
+  children?: { label: string; to: string }[]
+}
+
+export const navLinks: NavLink[] = [
   { label: 'Home', to: '/' },
-  { label: 'About', to: '/about' },
-  { label: 'Services', to: '/services' },
+  {
+    label: 'Services',
+    to: '/services',
+    children: [
+      { label: 'Digital Marketing', to: '/services#digital-marketing' },
+      { label: 'Amazon Growth', to: '/services#amazon-growth' },
+      { label: 'AI Systems', to: '/services#ai-systems' },
+    ],
+  },
   { label: 'Portfolio', to: '/portfolio' },
+  { label: 'Case Studies', to: '/case-studies' },
+  { label: 'About Us', to: '/about' },
+  { label: 'Insights', to: '/insights' },
   { label: 'Contact', to: '/contact' },
+]
+
+/** Placeholder brand marks for the hero "trusted by" row. */
+export const trustedBrands = ['Meridian', 'Nordwind', 'Costa', 'Helix', 'Lumen', 'Kaizen']
+
+/** "Interested in" and budget options for the footer contact form. */
+export const interestOptions = [
+  'Digital Marketing',
+  'Amazon Growth',
+  'AI Systems',
+  'Full-service growth',
+  'Not sure yet',
+]
+export const budgetOptions = [
+  '$1k – $5k / mo',
+  '$5k – $10k / mo',
+  '$10k – $25k / mo',
+  '$25k+ / mo',
 ]
 
 export const stats = [
@@ -198,64 +232,132 @@ export const projects = [
     title: 'Meridian Skincare — DTC Relaunch',
     category: 'Digital Marketing',
     icon: 'megaphone',
-    description:
-      'Rebuilt the storefront and paid funnel, lifting ROAS from 1.4x to 4.2x in one quarter.',
+    stat: '4.2x ROAS',
+    description: 'Rebuilt the storefront and paid funnel in a single quarter.',
   },
   {
     title: 'Nordwind Supplements — Amazon Takeover',
     category: 'Amazon Growth',
     icon: 'cart',
-    description:
-      'Full listing overhaul and PPC restructure drove a 3.1x sales increase and top-of-category rank.',
+    stat: '+210% Sales',
+    description: 'Full listing overhaul and PPC restructure to top-of-category.',
   },
   {
     title: 'Costa Robotics — Support Agent',
     category: 'AI Systems',
     icon: 'chip',
-    description:
-      'Deployed an agentic AI assistant resolving 60% of tickets and cutting response time by 80%.',
+    stat: '60% Tickets Automated',
+    description: 'An agentic AI assistant that cut response time by 80%.',
   },
   {
     title: 'Helix Health — Local SEO Engine',
     category: 'Digital Marketing',
     icon: 'search',
-    description:
-      'GMB and technical SEO program that doubled qualified local leads across 12 clinics.',
+    stat: '2x Local Leads',
+    description: 'GMB and technical SEO across 12 clinics.',
   },
   {
     title: 'Kaizen Goods — Private Label Launch',
     category: 'Amazon Growth',
     icon: 'box',
-    description:
-      'Sourcing-to-launch program that reached profitability in ten weeks and 4.8-star ratings.',
+    stat: '10-Week Payback',
+    description: 'Sourcing-to-launch to profitability and 4.8-star ratings.',
   },
   {
     title: 'Lumen Labs — Ops Automation Suite',
     category: 'AI Systems',
     icon: 'flow',
-    description:
-      'CRM-integrated automations that removed 30+ manual hours per week across sales and finance.',
+    stat: '30+ Hrs Saved / wk',
+    description: 'CRM-integrated automations across sales and finance.',
   },
   {
     title: 'Bloom & Co. — Social Growth',
     category: 'Digital Marketing',
     icon: 'spark',
-    description:
-      'Organic and paid social strategy that grew the audience 5x and tripled store visits.',
+    stat: '5x Audience',
+    description: 'Organic and paid social that tripled store visits.',
   },
   {
     title: 'Apex Fitness — Mobile App',
     category: 'AI Systems',
     icon: 'dashboard',
-    description:
-      'Native iOS & Android app with AI workout personalization and a 4.9 App Store rating.',
+    stat: '4.9★ App Store',
+    description: 'Native iOS & Android app with AI personalization.',
   },
   {
     title: 'Costa Robotics — Ads Scale-Up',
     category: 'Digital Marketing',
     icon: 'megaphone',
-    description:
-      'Google Ads and LSA expansion into three new markets while holding a target CPA.',
+    stat: '3 New Markets',
+    description: 'Google Ads and LSA expansion at a target CPA.',
+  },
+]
+
+/** Capabilities surrounding the 3D cube in the Custom AI Systems section. */
+export const aiFeatures = [
+  { icon: 'brain', title: 'AI Strategy', desc: 'Roadmaps that tie AI to real business outcomes.' },
+  { icon: 'flow', title: 'Data Engineering', desc: 'Clean, connected pipelines your models can trust.' },
+  { icon: 'chip', title: 'Model Development', desc: 'Custom and fine-tuned models for your domain.' },
+  { icon: 'cog', title: 'Automation', desc: 'Agents and workflows that remove manual work.' },
+  { icon: 'flow', title: 'Integration', desc: 'Wire AI into your CRM, tools, and stack.' },
+  { icon: 'dashboard', title: 'Deployment & Scale', desc: 'Reliable, observable systems built to grow.' },
+]
+
+/** Industry chips shown under the Custom AI Systems section. */
+export const industries = [
+  'Finance',
+  'Healthcare',
+  'E-commerce',
+  'SaaS',
+  'Manufacturing',
+  'Logistics',
+  'Real Estate',
+  'Education',
+]
+
+/** Placeholder editorial posts for the Insights page. */
+export const insights = [
+  {
+    tag: 'AI Systems',
+    title: 'Agentic AI is eating the back office',
+    excerpt: 'Where autonomous agents deliver ROI today — and where they still need a human.',
+    date: 'Jun 2026',
+    readTime: '6 min read',
+  },
+  {
+    tag: 'Amazon Growth',
+    title: 'The 2026 Amazon PPC playbook',
+    excerpt: 'How to restructure campaigns for the new placements and protect your margin.',
+    date: 'May 2026',
+    readTime: '8 min read',
+  },
+  {
+    tag: 'Digital Marketing',
+    title: 'AEO: optimizing for answer engines',
+    excerpt: 'Getting cited by AI answer engines is the new SEO. Here is how we approach it.',
+    date: 'May 2026',
+    readTime: '5 min read',
+  },
+  {
+    tag: 'Digital Marketing',
+    title: 'Creative testing at scale on Meta',
+    excerpt: 'A framework for finding winning ads faster without burning budget.',
+    date: 'Apr 2026',
+    readTime: '7 min read',
+  },
+  {
+    tag: 'AI Systems',
+    title: 'Choosing the right model for the job',
+    excerpt: 'Cost, latency, and quality trade-offs when building on modern LLMs.',
+    date: 'Apr 2026',
+    readTime: '6 min read',
+  },
+  {
+    tag: 'Amazon Growth',
+    title: 'Building a brand, not just a listing',
+    excerpt: 'Storefronts, A+ content, and reviews that turn browsers into loyal buyers.',
+    date: 'Mar 2026',
+    readTime: '5 min read',
   },
 ]
 

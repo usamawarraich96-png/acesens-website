@@ -74,12 +74,13 @@ export default function Logo({ size = 36, to = '/', className = '' }: LogoProps)
     <span className={`flex items-center gap-2.5 ${className}`}>
       <Mark size={size} />
       <span
-        className="font-display font-extrabold uppercase tracking-[0.18em] text-transparent"
+        className="font-display font-extrabold uppercase leading-none tracking-[0.18em] text-slate-100"
         style={{
           fontSize: size * 0.5,
-          backgroundImage: 'linear-gradient(135deg,#f4f7fa 0%,#c4cedb 45%,#eef2f7 70%,#9aa6b6 100%)',
+          backgroundImage: 'linear-gradient(180deg,#ffffff 0%,#d3dcea 60%,#aab7c9 100%)',
           WebkitBackgroundClip: 'text',
           backgroundClip: 'text',
+          WebkitTextFillColor: 'transparent',
         }}
       >
         Acesens
