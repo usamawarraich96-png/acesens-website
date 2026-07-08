@@ -87,7 +87,7 @@ export default function Logo({ size = 34, to = '/', className = '' }: LogoProps)
     <img
       src="/acesens-logo.png"
       alt="Acesens"
-      style={{ height: size * 1.15, width: 'auto' }}
+      style={{ height: size * 1.4, width: 'auto', filter: 'brightness(1.12) contrast(1.04)' }}
       className="select-none"
       onError={() => setImgFailed(true)}
     />

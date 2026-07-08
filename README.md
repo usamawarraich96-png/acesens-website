@@ -54,10 +54,10 @@ with **Vite + React + TypeScript + Tailwind CSS + Framer Motion**, plus a
   illustration (`Illustration.tsx`) — an analytics dashboard with a donut
   ring, bars and sparkline for Digital Marketing, a product/rating scene for
   Amazon Growth, and a circuit-brain chip for AI Systems.
-- **Logo:** a scalable inline SVG (`src/components/Logo.tsx`) — blue glowing
-  arc + arrow accent and a light-silver "ACESENS" wordmark legible on dark.
-  Drop the exact raster in `public/` and swap the component for an `<img>` to
-  use the original artwork.
+- **Logo:** the real brand render at `public/acesens-logo.png` (tightly
+  cropped with its baked background keyed out so it sits cleanly on the dark
+  bar). `src/components/Logo.tsx` loads it and falls back to a scalable
+  inline-SVG recreation if the file is ever missing.
 - Icons are simple flat/line SVGs (`src/components/Icon.tsx`).
 
 ## Tech stack
