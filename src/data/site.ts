@@ -293,28 +293,6 @@ export const projects = [
   },
 ]
 
-/** Capabilities surrounding the 3D cube in the Custom AI Systems section. */
-export const aiFeatures = [
-  { icon: 'brain', title: 'AI Strategy', desc: 'Roadmaps that tie AI to real business outcomes.' },
-  { icon: 'flow', title: 'Data Engineering', desc: 'Clean, connected pipelines your models can trust.' },
-  { icon: 'chip', title: 'Model Development', desc: 'Custom and fine-tuned models for your domain.' },
-  { icon: 'cog', title: 'Automation', desc: 'Agents and workflows that remove manual work.' },
-  { icon: 'flow', title: 'Integration', desc: 'Wire AI into your CRM, tools, and stack.' },
-  { icon: 'dashboard', title: 'Deployment & Scale', desc: 'Reliable, observable systems built to grow.' },
-]
-
-/** Industry chips shown under the Custom AI Systems section. */
-export const industries = [
-  'Finance',
-  'Healthcare',
-  'E-commerce',
-  'SaaS',
-  'Manufacturing',
-  'Logistics',
-  'Real Estate',
-  'Education',
-]
-
 /** Placeholder editorial posts for the Insights page. */
 export const insights = [
   {

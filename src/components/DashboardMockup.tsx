@@ -10,14 +10,14 @@ function Spark({ className = 'h-10 w-full' }: { className?: string }) {
     <svg viewBox="0 0 120 40" className={className} aria-hidden>
       <defs>
         <linearGradient id="dm-spark" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stopColor="#6ee7b7" stopOpacity="0.5" />
-          <stop offset="1" stopColor="#6ee7b7" stopOpacity="0" />
+          <stop offset="0" stopColor="#6690fa" stopOpacity="0.5" />
+          <stop offset="1" stopColor="#6690fa" stopOpacity="0" />
         </linearGradient>
       </defs>
       <path
         d="M2 32 L20 26 L38 29 L56 18 L74 22 L92 10 L118 5"
         fill="none"
-        stroke="#6ee7b7"
+        stroke="#6690fa"
         strokeWidth="2.2"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -39,7 +39,7 @@ function Bars({ className = 'h-10 w-full' }: { className?: string }) {
           width="10"
           height={h}
           rx="2"
-          fill="#34d399"
+          fill="#4f7df7"
           opacity={0.45 + (i / bars.length) * 0.55}
         />
       ))}
@@ -52,13 +52,13 @@ function Donut({ pct = 72, size = 64 }: { pct?: number; size?: number }) {
   const c = 2 * Math.PI * r
   return (
     <svg viewBox="0 0 64 64" style={{ width: size, height: size }} aria-hidden>
-      <circle cx="32" cy="32" r={r} fill="none" stroke="#173226" strokeWidth="8" />
+      <circle cx="32" cy="32" r={r} fill="none" stroke="#1b2547" strokeWidth="8" />
       <circle
         cx="32"
         cy="32"
         r={r}
         fill="none"
-        stroke="#34d399"
+        stroke="#4f7df7"
         strokeWidth="8"
         strokeLinecap="round"
         strokeDasharray={`${(c * pct) / 100} ${c}`}
@@ -138,7 +138,7 @@ export function FeatureCards() {
               <Icon name={f.icon} className="h-4 w-4" />
             </span>
             <span className="text-right">
-              <span className="block font-display text-base font-bold text-brand-300">
+              <span className="gradient-stat block font-display text-base font-bold">
                 {f.metric}
               </span>
               {f.sub && <span className="block text-[11px] text-slate-500">{f.sub}</span>}
@@ -212,7 +212,7 @@ export default function DashboardMockup() {
           <span className="text-xs font-medium tracking-wide text-slate-400">
             Acesens · Growth Dashboard
           </span>
-          <span className="rounded-full bg-brand-400/15 px-2.5 py-0.5 text-[11px] font-semibold text-brand-300">
+          <span className="rounded-full bg-accent-500/15 px-2.5 py-0.5 text-[11px] font-semibold text-accent-300">
             LIVE
           </span>
         </div>
@@ -224,7 +224,7 @@ export default function DashboardMockup() {
               <div className="text-[11px] text-slate-500">{k.label}</div>
               <div className="mt-0.5 flex items-baseline gap-2">
                 <span className="font-display text-lg font-bold text-white">{k.value}</span>
-                <span className="text-[11px] font-semibold text-brand-300">{k.delta}</span>
+                <span className="text-[11px] font-semibold text-accent-400">{k.delta}</span>
               </div>
             </div>
           ))}
@@ -268,7 +268,7 @@ export default function DashboardMockup() {
             >
               <span className="text-slate-300">{r[0]}</span>
               <span className="text-right text-slate-400">{r[1]}</span>
-              <span className="text-right font-semibold text-brand-300">{r[2]}</span>
+              <span className="text-right font-semibold text-accent-400">{r[2]}</span>
             </div>
           ))}
         </div>
@@ -276,15 +276,15 @@ export default function DashboardMockup() {
 
       {/* ambient floating particles */}
       {[
-        { cls: 'left-[-3rem] top-10 h-3 w-3', dur: 7 },
-        { cls: 'right-[-2.5rem] top-24 h-2 w-2', dur: 9 },
-        { cls: 'left-[-1.5rem] bottom-16 h-2.5 w-2.5', dur: 8 },
-        { cls: 'right-[-3.5rem] bottom-8 h-3.5 w-3.5', dur: 10 },
+        { cls: 'left-[-3rem] top-10 h-3 w-3', dur: 7, color: 'bg-brand-300/50' },
+        { cls: 'right-[-2.5rem] top-24 h-2 w-2', dur: 9, color: 'bg-accent-400/60' },
+        { cls: 'left-[-1.5rem] bottom-16 h-2.5 w-2.5', dur: 8, color: 'bg-brand-300/50' },
+        { cls: 'right-[-3.5rem] bottom-8 h-3.5 w-3.5', dur: 10, color: 'bg-accent-400/50' },
       ].map((p, i) => (
         <motion.span
           key={i}
           aria-hidden
-          className={`pointer-events-none absolute ${p.cls} rounded-full bg-brand-300/50 blur-[1px]`}
+          className={`pointer-events-none absolute ${p.cls} rounded-full ${p.color} blur-[1px]`}
           animate={{ y: [0, -14, 0], opacity: [0.4, 0.9, 0.4] }}
           transition={{ duration: p.dur, repeat: Infinity, ease: 'easeInOut', delay: i * 0.7 }}
         />

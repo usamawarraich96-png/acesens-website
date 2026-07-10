@@ -11,7 +11,7 @@ function Stars({ rating }: { rating: number }) {
         <Icon
           key={i}
           name="star"
-          className={`h-4 w-4 ${i < rating ? 'fill-brand-400 text-brand-400' : 'fill-transparent text-slate-500'}`}
+          className={`h-4 w-4 ${i < rating ? 'fill-accent-400 text-accent-400' : 'fill-transparent text-slate-500'}`}
         />
       ))}
     </div>

@@ -222,7 +222,7 @@ export default function Footer() {
       <div className="container-page relative border-t border-white/10 py-14">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-6">
           <div className="lg:col-span-2">
-            <Logo size={32} to={null} />
+            <Logo size={76} to={null} />
             <p className="mt-4 max-w-xs text-sm text-slate-400">{company.tagline}</p>
             <div className="mt-6 flex gap-3">
               {company.social.map((s) => (

@@ -102,8 +102,8 @@ export default function Navbar() {
             : 'border-b border-transparent bg-transparent'
         }`}
       >
-        <nav className="container-page flex h-16 items-center justify-between gap-4">
-          <Logo size={30} />
+        <nav className="container-page flex h-20 items-center justify-between gap-4">
+          <Logo size={54} />
 
           <ul className="hidden items-center gap-0.5 lg:flex">
             {navLinks.map((link) => (

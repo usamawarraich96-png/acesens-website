@@ -40,7 +40,7 @@ export default function CaseStudies() {
                 <span className="w-fit rounded-full border border-brand-400/30 bg-brand-400/10 px-3 py-1 text-xs font-medium text-brand-300">
                   {p.category}
                 </span>
-                <div className="gradient-text mt-3 font-display text-2xl font-extrabold">
+                <div className="gradient-stat mt-3 font-display text-2xl font-extrabold">
                   {p.stat}
                 </div>
                 <h3 className="mt-1 font-semibold text-white">{p.title}</h3>

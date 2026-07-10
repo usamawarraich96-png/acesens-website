@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import AISystemsSection from '../components/AISystemsSection'
 import AuroraBackground from '../components/AuroraBackground'
 import CTASection from '../components/CTASection'
 import DashboardMockup, { FeatureCards } from '../components/DashboardMockup'
@@ -34,7 +33,7 @@ function Hero() {
           >
             One platform for
             <br />
-            <span className="gradient-text">measurable growth</span>
+            <span className="gradient-text-live">measurable growth</span>
           </motion.h1>
 
           <motion.p variants={fadeUp} className="mt-6 max-w-xl text-lg text-slate-400">
@@ -185,7 +184,7 @@ function PortfolioPreview() {
                 </span>
               </div>
               <div className="flex flex-1 flex-col p-6">
-                <div className="gradient-text font-display text-2xl font-bold">{p.stat}</div>
+                <div className="gradient-stat font-display text-2xl font-bold">{p.stat}</div>
                 <h3 className="mt-2 font-semibold text-white">{p.title}</h3>
                 <p className="mt-1 text-sm text-slate-400">{p.description}</p>
               </div>
@@ -237,7 +236,6 @@ export default function Home() {
       <Hero />
       <Stats />
       <Services />
-      <AISystemsSection />
       <PortfolioPreview />
       <Process />
       <ReviewsMarquee />

@@ -3,7 +3,7 @@
 A modern, animated marketing site for **Acesens**, a (fictional) AI growth
 platform (SaaS) spanning **Digital Marketing, Amazon Growth, and AI Systems**
 modules. Built with **Vite + React + TypeScript + Tailwind CSS + Framer
-Motion**, plus a **React Three Fiber** 3D showcase.
+Motion**, with a live canvas particle backdrop.
 
 > All content is placeholder copy for demonstration purposes.
 
@@ -19,12 +19,6 @@ Motion**, plus a **React Three Fiber** 3D showcase.
   and a cursor-tilting, floating **glass dashboard mockup** (KPIs, sparkline,
   donut, bar chart, campaign table — all lightweight inline SVG).
 - **Animated stat counters** that count up when scrolled into view.
-- **Custom AI Systems 3D section** — a lazy-loaded React Three Fiber scene:
-  an auto-rotating glass cube with a glowing particle-node "brain" inside on
-  a bloom-lit pedestal, surrounded by six feature cards linked by animated
-  glowing lines. Particle count is capped, the heavy scene is code-split and
-  only mounts near the viewport, and a static fallback renders for
-  `prefers-reduced-motion` or browsers without WebGL.
 - **Three platform modules** — Digital Marketing, Amazon Growth, and AI
   Systems — each shown as a large card and as its own anchored section.
 - **Portfolio** — filterable grid of categorized case-study cards.
@@ -36,16 +30,17 @@ Motion**, plus a **React Three Fiber** 3D showcase.
 
 ## Branding
 
-- **Backgrounds:** very dark green-black throughout, with a subtle
-  circuit/grid pattern and drifting green glows (no photography). Each
-  section uses a radial gradient — lighter toward the centre (`#10231B`),
-  fading to near-black (`#050B09`) at the edges.
+- **Backgrounds:** very dark navy-black throughout with a live canvas — a
+  constellation particle field (blue nodes, occasional orange), a faint
+  grid, and slow-drifting blue/orange glows. Each section uses a radial
+  gradient — lifted navy centre (`#131B36`) to near-black (`#070B18`) edges.
+  The particle canvas pauses off-screen/hidden tabs and renders a static
+  frame under `prefers-reduced-motion`.
 - **Panels:** liquid glass — a light translucent white fill, a soft white
-  hairline border, backdrop blur, and a faint green glow on hover
-  (`.glass`). Accent green is confined to details inside (a stat figure, a
-  graph line, an icon), never the card surface.
-- **Accent:** soft luminous green (`#10B981`–`#6EE7B7`) for button fills,
-  links, stat numbers, icon strokes, and graph lines only.
+  hairline border, backdrop blur, and a faint blue glow on hover (`.glass`).
+- **Accents:** a dual pair — vivid orange (`#F97316`–`#FB923C`) for primary
+  CTAs, eyebrow labels, and highlighted stats; electric blue (`#4F7DF7`–
+  `#6690FA`) for links, icons, graph lines, and glows.
 - **Type:** Space Grotesk for headlines (tight tracking on large titles,
   uppercase wide-tracked eyebrow labels); Inter (lighter weight) for body.
   Every page's main headline uses the two-tone gradient (white line + a
@@ -54,10 +49,11 @@ Motion**, plus a **React Three Fiber** 3D showcase.
   illustration (`Illustration.tsx`) — an analytics dashboard with a donut
   ring, bars and sparkline for Digital Marketing, a product/rating scene for
   Amazon Growth, and a circuit-brain chip for AI Systems.
-- **Logo:** the real brand render at `public/acesens-logo.png` (tightly
-  cropped with its baked background keyed out so it sits cleanly on the dark
-  bar). `src/components/Logo.tsx` loads it and falls back to a scalable
-  inline-SVG recreation if the file is ever missing.
+- **Logo:** the triangular A/S brand mark at `public/acesens-logo.png`
+  (cropped from the supplied render, background keyed to transparent, silver
+  brightened, blue glow via CSS). Rendered large in the navbar and footer;
+  `src/components/Logo.tsx` falls back to an inline-SVG triangle if the file
+  is missing.
 - Icons are simple flat/line SVGs (`src/components/Icon.tsx`).
 
 ## Tech stack
@@ -68,7 +64,6 @@ Motion**, plus a **React Three Fiber** 3D showcase.
 | React + TypeScript | UI & type safety |
 | Tailwind CSS | Styling / design system |
 | Framer Motion | Animation & motion |
-| React Three Fiber + drei + postprocessing | 3D Custom AI Systems showcase |
 | React Router | Client-side routing |
 
 ## Getting started
@@ -84,9 +79,8 @@ npm run preview  # preview the production build
 
 ```
 src/
-  components/      Reusable UI (Navbar, Footer, Logo, hero visual, marquee, …)
-    ai/CubeScene   Lazy-loaded React Three Fiber 3D scene
-  pages/           Home, Services, Portfolio, CaseStudies, About, Insights, Contact
-  data/            Placeholder site content (services, projects, reviews, …)
-  lib/             Shared Framer Motion variants
+  components/   Reusable UI (Navbar, Footer, Logo, dashboard, particles, …)
+  pages/        Home, Services, Portfolio, CaseStudies, About, Insights, Contact
+  data/         Placeholder site content (services, projects, reviews, …)
+  lib/          Shared Framer Motion variants
 ```

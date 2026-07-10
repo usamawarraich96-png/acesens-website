@@ -16,7 +16,7 @@ export default function App() {
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
-      <div className="flex-1 pt-16">
+      <div className="flex-1 pt-20">
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Home />} />

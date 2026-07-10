@@ -30,7 +30,7 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
       </div>
 
       <div className="flex flex-1 flex-col p-6">
-        <div className="gradient-text font-display text-2xl font-bold">{project.stat}</div>
+        <div className="gradient-stat font-display text-2xl font-bold">{project.stat}</div>
         <h3 className="mt-2 text-lg font-semibold text-white">{project.title}</h3>
         <p className="mt-2 flex-1 text-sm text-slate-400">{project.description}</p>
         <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-brand-400 opacity-0 transition-opacity duration-300 group-hover:opacity-100">

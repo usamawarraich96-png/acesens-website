@@ -35,7 +35,7 @@ export default function StatItem({ value, label }: StatItemProps) {
 
   return (
     <motion.div ref={ref} variants={fadeUp} className="text-center">
-      <div className="gradient-text text-4xl font-bold sm:text-5xl">{display}</div>
+      <div className="gradient-stat text-4xl font-bold sm:text-5xl">{display}</div>
       <div className="mt-2 text-sm text-slate-400">{label}</div>
     </motion.div>
   )
