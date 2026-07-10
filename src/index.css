@@ -81,8 +81,8 @@
 
   /* Section 'View all →' link (add `group` in markup for the arrow nudge) */
   .view-all {
-    @apply inline-flex items-center gap-1.5 text-sm font-semibold text-brand-400
-      transition-colors hover:text-brand-300;
+    @apply inline-flex items-center gap-1.5 text-sm font-semibold text-accent-400
+      transition-colors hover:text-accent-300;
   }
 
   /* Infinite right-to-left marquee track (content is duplicated in markup) */

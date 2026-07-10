@@ -16,7 +16,7 @@ interface ParticleFieldProps {
 }
 
 const BLUE = '79,125,247'
-const ORANGE = '249,115,22'
+const ORANGE = '217,119,87'
 const LINK_DIST = 130
 
 /**
@@ -58,7 +58,7 @@ export default function ParticleField({ density = 0.55, className = '' }: Partic
         vx: (Math.random() - 0.5) * 0.22,
         vy: (Math.random() - 0.5) * 0.22,
         r: 1 + Math.random() * 1.6,
-        orange: Math.random() < 0.09,
+        orange: Math.random() < 0.35,
       }))
     }
 

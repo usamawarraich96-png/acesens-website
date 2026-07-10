@@ -24,8 +24,8 @@ function Defs() {
         <stop offset="1" stopColor="#6690fa" />
       </linearGradient>
       <linearGradient id="art-orange" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stopColor="#fb923c" />
-        <stop offset="1" stopColor="#f97316" />
+        <stop offset="0" stopColor="#e08b64" />
+        <stop offset="1" stopColor="#d97757" />
       </linearGradient>
     </defs>
   )
@@ -113,7 +113,7 @@ export function AmazonGrowthArt({ className }: ArtProps) {
         strokeDasharray="4 6"
         opacity="0.85"
       />
-      <path d="M372 60 l-14 2 l6 8 Z" fill="#fb923c" opacity="0.95" />
+      <path d="M372 60 l-14 2 l6 8 Z" fill="#e08b64" opacity="0.95" />
 
       {/* pedestal */}
       <ellipse cx="150" cy="196" rx="70" ry="12" fill="#131b36" />
@@ -127,7 +127,7 @@ export function AmazonGrowthArt({ className }: ArtProps) {
       </g>
 
       {/* stars */}
-      <g transform="translate(255 150)" fill="#fb923c">
+      <g transform="translate(255 150)" fill="#e08b64">
         {[0, 1, 2, 3, 4].map((i) => (
           <path
             key={i}
@@ -188,7 +188,7 @@ export function AISystemsArt({ className }: ArtProps) {
           [-6, 10],
           [10, 14],
         ].map(([x, y], i) => (
-          <circle key={i} cx={x} cy={y} r="2.2" fill={i % 2 ? '#fb923c' : '#4f7df7'} />
+          <circle key={i} cx={x} cy={y} r="2.2" fill={i % 2 ? '#e08b64' : '#4f7df7'} />
         ))}
       </g>
     </svg>

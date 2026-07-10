@@ -13,6 +13,13 @@ export default function CTASection() {
         viewport={revealViewport}
         className="section-gradient relative overflow-hidden rounded-card border border-white/[0.12] px-8 py-16 text-center shadow-glass sm:px-16"
       >
+        <img
+          src="/img/s1-14.jpg"
+          alt=""
+          aria-hidden
+          loading="lazy"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover object-right opacity-20 [mask-image:linear-gradient(to_left,black,transparent_65%)]"
+        />
         <div className="pointer-events-none absolute inset-0 bg-grid-fade bg-[size:32px_32px] opacity-40 [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
         <motion.div
           aria-hidden

@@ -1,8 +1,8 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useMemo, useState } from 'react'
+import CardImage from '../components/CardImage'
 import CTASection from '../components/CTASection'
 import Icon from '../components/Icon'
-import TopicArt from '../components/Illustration'
 import Page from '../components/Page'
 import PageHeader from '../components/PageHeader'
 import { fadeUp, revealViewport, staggerContainer } from '../lib/motion'
@@ -23,7 +23,12 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
       className="card group relative flex h-full flex-col overflow-hidden"
     >
       <div className="relative overflow-hidden">
-        <TopicArt category={project.category} className="aspect-[16/10] w-full" />
+        <CardImage
+          src={project.image}
+          alt={project.title}
+          category={project.category}
+          className="aspect-[16/10] w-full"
+        />
         <span className="absolute left-3 top-3 rounded-full border border-white/15 bg-ink-950/70 px-3 py-1 text-xs font-medium text-white backdrop-blur">
           {project.category}
         </span>
@@ -74,7 +79,7 @@ export default function Portfolio() {
               {active === f && (
                 <motion.span
                   layoutId="portfolio-filter"
-                  className="absolute inset-0 -z-10 rounded-full bg-brand-500 shadow-glow"
+                  className="absolute inset-0 -z-10 rounded-full bg-accent-500 shadow-glow-accent"
                   transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                 />
               )}

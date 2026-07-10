@@ -24,13 +24,13 @@ export default function AuroraBackground() {
       />
       <motion.div
         aria-hidden
-        className="absolute right-[-8%] top-[16%] h-[24rem] w-[24rem] rounded-full bg-accent-500/[0.13] blur-3xl"
+        className="absolute right-[-8%] top-[16%] h-[24rem] w-[24rem] rounded-full bg-accent-500/[0.22] blur-3xl"
         animate={{ x: [0, -60, 0], y: [0, 60, 0], scale: [1, 1.18, 1] }}
         transition={{ duration: 26, repeat: Infinity, ease: 'easeInOut' }}
       />
       <motion.div
         aria-hidden
-        className="absolute bottom-[-18%] left-1/3 h-[28rem] w-[28rem] rounded-full bg-brand-500/15 blur-3xl"
+        className="absolute bottom-[-18%] left-1/3 h-[28rem] w-[28rem] rounded-full bg-accent-500/15 blur-3xl"
         animate={{ x: [0, 50, 0], scale: [1, 1.08, 1] }}
         transition={{ duration: 30, repeat: Infinity, ease: 'easeInOut' }}
       />

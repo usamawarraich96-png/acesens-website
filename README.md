@@ -45,10 +45,11 @@ Motion**, with a live canvas particle backdrop.
   uppercase wide-tracked eyebrow labels); Inter (lighter weight) for body.
   Every page's main headline uses the two-tone gradient (white line + a
   blue-white gradient line).
-- **Card imagery:** each Service/Portfolio card carries a topic-relevant SVG
-  illustration (`Illustration.tsx`) — an analytics dashboard with a donut
-  ring, bars and sparkline for Digital Marketing, a product/rating scene for
-  Amazon Growth, and a circuit-brain chip for AI Systems.
+- **Card imagery:** real brand tiles sliced from the supplied picture stacks
+  (`public/img/s1-*.jpg`, `s2-*.jpg`) are used across service, portfolio,
+  case-study, insights, About, hero, and CTA surfaces via `CardImage`, which
+  falls back to topic-relevant SVG illustrations (`Illustration.tsx`) when an
+  image is missing.
 - **Logo:** the triangular A/S brand mark at `public/acesens-logo.png`
   (cropped from the supplied render, background keyed to transparent, silver
   brightened, blue glow via CSS). Rendered large in the navbar and footer;

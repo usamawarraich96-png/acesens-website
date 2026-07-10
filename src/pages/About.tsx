@@ -48,6 +48,14 @@ function Story() {
         >
           <div className="pointer-events-none absolute -inset-4 rounded-3xl bg-gradient-to-br from-brand-500/20 to-accent-500/10 blur-2xl" />
           <div className="relative grid gap-4">
+            <motion.div variants={fadeUp} className="glass overflow-hidden p-1.5">
+              <img
+                src="/img/s1-02.jpg"
+                alt="Growth is our mission"
+                loading="lazy"
+                className="aspect-[16/8] w-full rounded-[10px] object-cover"
+              />
+            </motion.div>
             {milestones.map((m) => (
               <motion.div
                 key={m.year}

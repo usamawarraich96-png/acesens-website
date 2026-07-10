@@ -58,7 +58,7 @@ function Donut({ pct = 72, size = 64 }: { pct?: number; size?: number }) {
         cy="32"
         r={r}
         fill="none"
-        stroke="#4f7df7"
+        stroke="#d97757"
         strokeWidth="8"
         strokeLinecap="round"
         strokeDasharray={`${(c * pct) / 100} ${c}`}
@@ -134,7 +134,7 @@ export function FeatureCards() {
           className="glass p-5 text-left"
         >
           <div className="flex items-start justify-between gap-2">
-            <span className="grid h-8 w-8 place-items-center rounded-lg bg-brand-400/15 text-brand-300 ring-1 ring-brand-400/20">
+            <span className="grid h-8 w-8 place-items-center rounded-lg bg-accent-500/15 text-accent-400 ring-1 ring-accent-500/25">
               <Icon name={f.icon} className="h-4 w-4" />
             </span>
             <span className="text-right">

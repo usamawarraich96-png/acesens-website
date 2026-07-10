@@ -31,14 +31,14 @@ export default {
           800: '#253e87',
           900: '#20346c',
         },
-        // Vivid orange — CTAs, eyebrow labels, stat highlights
+        // Warm clay orange (Claude-logo tone) — CTAs, labels, highlights
         accent: {
-          100: '#ffedd5',
-          200: '#fed7aa',
-          300: '#fdba74',
-          400: '#fb923c',
-          500: '#f97316',
-          600: '#ea580c',
+          100: '#f9ece5',
+          200: '#f0cfc0',
+          300: '#e7ac93',
+          400: '#e08b64',
+          500: '#d97757',
+          600: '#c25d3f',
         },
         // Body / muted text — light blue-grey
         slate: {
@@ -57,7 +57,7 @@ export default {
       },
       boxShadow: {
         glow: '0 0 40px -10px rgba(79,125,247,0.55)',
-        'glow-accent': '0 0 34px -8px rgba(249,115,22,0.5)',
+        'glow-accent': '0 0 34px -8px rgba(217,119,87,0.55)',
         glass:
           '0 10px 40px -14px rgba(0,0,0,0.7), inset 0 1px 0 0 rgba(255,255,255,0.14)',
       },
@@ -65,7 +65,7 @@ export default {
         'grid-fade':
           'linear-gradient(to right, rgba(102,144,250,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(102,144,250,0.05) 1px, transparent 1px)',
         'circuit':
-          'radial-gradient(circle at 18% 18%, rgba(79,125,247,0.12), transparent 42%), radial-gradient(circle at 82% 62%, rgba(249,115,22,0.07), transparent 40%)',
+          'radial-gradient(circle at 18% 18%, rgba(79,125,247,0.11), transparent 42%), radial-gradient(circle at 82% 62%, rgba(217,119,87,0.10), transparent 42%)',
       },
       keyframes: {
         float: {

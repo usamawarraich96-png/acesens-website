@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
+import CardImage from '../components/CardImage'
 import CTASection from '../components/CTASection'
 import Icon from '../components/Icon'
-import TopicArt from '../components/Illustration'
 import Page from '../components/Page'
 import PageHeader from '../components/PageHeader'
 import { fadeUp, revealViewport, staggerContainer } from '../lib/motion'
@@ -34,7 +34,12 @@ export default function CaseStudies() {
               className="glass glass-hover group flex flex-col overflow-hidden sm:flex-row"
             >
               <div className="relative w-full overflow-hidden sm:w-2/5">
-                <TopicArt category={p.category} className="aspect-[16/10] h-full w-full" />
+                <CardImage
+                  src={p.image}
+                  alt={p.title}
+                  category={p.category}
+                  className="aspect-[16/10] h-full w-full"
+                />
               </div>
               <div className="flex flex-1 flex-col p-6">
                 <span className="w-fit rounded-full border border-brand-400/30 bg-brand-400/10 px-3 py-1 text-xs font-medium text-brand-300">

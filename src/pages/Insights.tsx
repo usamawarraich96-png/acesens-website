@@ -1,10 +1,16 @@
 import { motion } from 'framer-motion'
 import CTASection from '../components/CTASection'
-import Icon from '../components/Icon'
 import Page from '../components/Page'
 import PageHeader from '../components/PageHeader'
 import { fadeUp, revealViewport, staggerContainer } from '../lib/motion'
 import { insights } from '../data/site'
+
+/** Topic image for each editorial tag (from the supplied brand picture stacks). */
+const tagImages: Record<string, string> = {
+  'AI Systems': '/img/s2-14.jpg',
+  'Amazon Growth': '/img/s1-09.jpg',
+  'Digital Marketing': '/img/s2-06.jpg',
+}
 
 export default function Insights() {
   const [featured, ...rest] = insights
@@ -27,12 +33,13 @@ export default function Insights() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="glass glass-hover group grid overflow-hidden lg:grid-cols-2"
         >
-          <div className="relative min-h-[16rem] overflow-hidden bg-gradient-to-br from-brand-600/30 to-ink-850">
-            <div className="absolute inset-0 bg-grid-fade bg-[size:26px_26px] opacity-40" />
-            <div className="pointer-events-none absolute -right-10 -top-10 h-40 w-40 rounded-full bg-brand-500/30 blur-3xl" />
-            <div className="absolute inset-0 grid place-items-center">
-              <Icon name="spark" className="h-16 w-16 text-brand-200" />
-            </div>
+          <div className="relative min-h-[16rem] overflow-hidden">
+            <img
+              src="/img/s1-13.jpg"
+              alt={featured.title}
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-transparent to-ink-900/40" />
           </div>
           <div className="flex flex-col justify-center p-8">
             <span className="w-fit rounded-full border border-brand-400/30 bg-brand-400/10 px-3 py-1 text-xs font-medium text-brand-300">
@@ -65,8 +72,13 @@ export default function Insights() {
               whileHover={{ y: -6 }}
               className="glass glass-hover group flex h-full flex-col overflow-hidden"
             >
-              <div className="relative aspect-[16/9] overflow-hidden bg-gradient-to-br from-slateblue-700 to-ink-850">
-                <div className="absolute inset-0 bg-grid-fade bg-[size:22px_22px] opacity-40" />
+              <div className="relative aspect-[16/9] overflow-hidden">
+                <img
+                  src={tagImages[post.tag] ?? '/img/s1-01.jpg'}
+                  alt={post.title}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
                 <span className="absolute left-3 top-3 rounded-full border border-brand-400/30 bg-ink-950/70 px-3 py-1 text-xs font-medium text-brand-300 backdrop-blur">
                   {post.tag}
                 </span>

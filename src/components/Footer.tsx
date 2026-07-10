@@ -147,7 +147,7 @@ function ContactBlock() {
           <ul className="mt-6 space-y-2 text-sm text-slate-200">
             {['Live platform walkthrough', 'Channel & ROI audit', 'Tailored rollout plan'].map((x) => (
               <li key={x} className="flex items-center gap-2">
-                <Icon name="check" className="h-4 w-4 text-brand-300" />
+                <Icon name="check" className="h-4 w-4 text-accent-400" />
                 {x}
               </li>
             ))}
@@ -264,13 +264,13 @@ export default function Footer() {
             </h3>
             <ul className="mt-4 space-y-3 text-sm text-slate-400">
               <li className="flex items-start gap-2">
-                <Icon name="mail" className="mt-0.5 h-4 w-4 text-brand-400" />
+                <Icon name="mail" className="mt-0.5 h-4 w-4 text-accent-400" />
                 <a href={`mailto:${company.email}`} className="hover:text-white">
                   {company.email}
                 </a>
               </li>
               <li className="flex items-start gap-2">
-                <Icon name="phone" className="mt-0.5 h-4 w-4 text-brand-400" />
+                <Icon name="phone" className="mt-0.5 h-4 w-4 text-accent-400" />
                 <span>{company.phone}</span>
               </li>
             </ul>

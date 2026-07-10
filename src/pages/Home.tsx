@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import AuroraBackground from '../components/AuroraBackground'
+import CardImage from '../components/CardImage'
 import CTASection from '../components/CTASection'
 import DashboardMockup, { FeatureCards } from '../components/DashboardMockup'
 import Icon from '../components/Icon'
@@ -8,7 +9,6 @@ import Page from '../components/Page'
 import ReviewsMarquee from '../components/ReviewsMarquee'
 import SectionHeading from '../components/SectionHeading'
 import StatItem from '../components/StatItem'
-import TopicArt from '../components/Illustration'
 import { fadeUp, revealViewport, staggerContainer } from '../lib/motion'
 import { projects, serviceCategories, stats, steps, trustedBrands } from '../data/site'
 
@@ -55,8 +55,49 @@ function Hero() {
         {/* reference-style glass feature cards */}
         <FeatureCards />
 
-        {/* floating glass dashboard */}
-        <DashboardMockup />
+        {/* floating glass dashboard, flanked by brand imagery on wide screens */}
+        <div className="relative w-full">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.9, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute -left-4 top-24 z-10 hidden w-48 -rotate-3 xl:block"
+          >
+            <motion.div
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
+              className="glass overflow-hidden p-1.5"
+            >
+              <img
+                src="/img/s1-12.jpg"
+                alt="AI Systems"
+                loading="lazy"
+                className="aspect-[6/5] w-full rounded-[10px] object-cover"
+              />
+            </motion.div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 1.05, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="absolute -right-4 top-40 z-10 hidden w-48 rotate-3 xl:block"
+          >
+            <motion.div
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+              className="glass overflow-hidden p-1.5"
+            >
+              <img
+                src="/img/s1-19.jpg"
+                alt="Let's build something extraordinary"
+                loading="lazy"
+                className="aspect-[6/5] w-full rounded-[10px] object-cover"
+              />
+            </motion.div>
+          </motion.div>
+
+          <DashboardMockup />
+        </div>
 
         <motion.div
           initial={{ opacity: 0 }}
@@ -125,7 +166,7 @@ function Services() {
               className="glass glass-hover flex h-full flex-col p-5"
             >
               <div className="overflow-hidden rounded-xl ring-1 ring-white/10">
-                <TopicArt id={cat.id} className="aspect-[16/9] w-full" />
+                <CardImage src={cat.image} alt={cat.title} id={cat.id} className="aspect-[16/9] w-full" />
               </div>
               <h3 className="mt-5 font-display text-xl font-bold tracking-tight text-white">
                 {cat.title}
@@ -134,7 +175,7 @@ function Services() {
               <ul className="mt-5 flex-1 space-y-2">
                 {cat.items.slice(0, 5).map((item) => (
                   <li key={item.name} className="flex items-center gap-2 text-sm text-slate-300">
-                    <Icon name="check" className="h-4 w-4 flex-shrink-0 text-brand-400" />
+                    <Icon name="check" className="h-4 w-4 flex-shrink-0 text-accent-400" />
                     {item.name}
                   </li>
                 ))}
@@ -178,7 +219,7 @@ function PortfolioPreview() {
               className="glass glass-hover group flex h-full flex-col overflow-hidden"
             >
               <div className="relative overflow-hidden">
-                <TopicArt category={p.category} className="aspect-[16/10] w-full" />
+                <CardImage src={p.image} alt={p.title} category={p.category} className="aspect-[16/10] w-full" />
                 <span className="absolute left-3 top-3 rounded-full border border-white/15 bg-ink-950/70 px-3 py-1 text-xs font-medium text-white backdrop-blur">
                   {p.category}
                 </span>
@@ -214,7 +255,7 @@ function Process() {
         >
           {steps.map((s, i) => (
             <motion.div key={s.step} variants={fadeUp} className="glass relative p-7">
-              <div className="font-display text-5xl font-extrabold text-brand-500/20">{s.step}</div>
+              <div className="font-display text-5xl font-extrabold text-accent-500/25">{s.step}</div>
               <h3 className="mt-3 text-lg font-semibold text-white">{s.title}</h3>
               <p className="mt-2 text-sm text-slate-400">{s.body}</p>
               {i < steps.length - 1 && (

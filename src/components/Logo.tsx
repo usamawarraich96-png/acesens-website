@@ -54,7 +54,7 @@ export default function Logo({ size = 48, to = '/', className = '' }: LogoProps)
       style={{
         height: size,
         width: 'auto',
-        filter: 'drop-shadow(0 0 14px rgba(79,125,247,0.35))',
+        filter: 'drop-shadow(0 0 14px rgba(217,119,87,0.4))',
       }}
       className="select-none"
       onError={() => setImgFailed(true)}

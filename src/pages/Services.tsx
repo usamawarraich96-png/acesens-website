@@ -29,7 +29,7 @@ function CategorySection({
           >
             <motion.div
               variants={fadeUp}
-              className="inline-flex rounded-2xl bg-gradient-to-br from-brand-500/20 to-brand-400/10 p-4 text-brand-400 ring-1 ring-white/10"
+              className="inline-flex rounded-2xl bg-gradient-to-br from-accent-500/25 to-accent-400/10 p-4 text-accent-400 ring-1 ring-white/10"
             >
               <Icon name={category.icon} className="h-8 w-8" />
             </motion.div>
