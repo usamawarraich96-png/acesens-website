@@ -4,45 +4,45 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Very dark navy-black — used throughout
+        // Very dark green-black — used throughout
         ink: {
-          950: '#050B14',
-          900: '#070E1A',
-          850: '#0A1220',
-          800: '#0e1728',
-          700: '#152238',
+          950: '#050B09',
+          900: '#07110D',
+          850: '#0A1512',
+          800: '#0D1B16',
+          700: '#12241D',
         },
         // Slightly lifted glass-panel base
         slateblue: {
-          800: '#0d1626',
-          700: '#132038',
-          600: '#1a2b48',
+          800: '#0c1a14',
+          700: '#11241C',
+          600: '#173226',
         },
-        // Rich medium-blue accent — buttons, links, glow, gradients
+        // Soft luminous green accent — buttons, links, glow, gradients
         brand: {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#4FA3F5',
-          500: '#3B82F6',
-          600: '#2f6fd6',
-          700: '#2559ac',
-          800: '#1e478a',
-          900: '#1b3a6e',
+          50: '#ecfdf5',
+          100: '#d1fae5',
+          200: '#a7f3d0',
+          300: '#6ee7b7',
+          400: '#34d399',
+          500: '#10b981',
+          600: '#059669',
+          700: '#047857',
+          800: '#065f46',
+          900: '#064e3b',
         },
-        // Accent kept as an alias of the blue brand for existing utilities
+        // Accent kept as an alias of the green brand for existing utilities
         accent: {
-          400: '#4FA3F5',
-          500: '#3B82F6',
-          600: '#2f6fd6',
+          400: '#34d399',
+          500: '#10b981',
+          600: '#059669',
         },
-        // Body / muted text — light grey-blue
+        // Body / muted text — light grey with a green cast
         slate: {
-          200: '#E8EEF6',
-          300: '#C7D2E0',
-          400: '#9FB0C6',
-          500: '#7A8AA3',
+          200: '#E9F2ED',
+          300: '#C6D6CD',
+          400: '#9FB5A9',
+          500: '#79907F',
         },
       },
       fontFamily: {
@@ -53,16 +53,16 @@ export default {
         card: '1rem', // 16px — single consistent card radius
       },
       boxShadow: {
-        glow: '0 0 40px -10px rgba(59,130,246,0.55)',
-        'glow-accent': '0 0 30px -8px rgba(79,163,245,0.5)',
+        glow: '0 0 40px -10px rgba(52,211,153,0.5)',
+        'glow-accent': '0 0 30px -8px rgba(110,231,183,0.45)',
         glass:
           '0 10px 40px -14px rgba(0,0,0,0.7), inset 0 1px 0 0 rgba(255,255,255,0.14)',
       },
       backgroundImage: {
         'grid-fade':
-          'linear-gradient(to right, rgba(96,165,250,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(96,165,250,0.06) 1px, transparent 1px)',
+          'linear-gradient(to right, rgba(110,231,183,0.055) 1px, transparent 1px), linear-gradient(to bottom, rgba(110,231,183,0.055) 1px, transparent 1px)',
         'circuit':
-          'radial-gradient(circle at 20% 20%, rgba(59,130,246,0.10), transparent 40%), radial-gradient(circle at 80% 60%, rgba(79,163,245,0.08), transparent 45%)',
+          'radial-gradient(circle at 20% 20%, rgba(16,185,129,0.10), transparent 40%), radial-gradient(circle at 80% 60%, rgba(110,231,183,0.07), transparent 45%)',
       },
       keyframes: {
         float: {

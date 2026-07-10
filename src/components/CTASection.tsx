@@ -25,22 +25,22 @@ export default function CTASection() {
             variants={fadeUp}
             className="mx-auto max-w-2xl text-3xl font-bold text-white sm:text-4xl"
           >
-            Ready to turn attention into revenue?
+            Ready to put growth on autopilot?
           </motion.h2>
           <motion.p variants={fadeUp} className="mx-auto mt-4 max-w-xl text-lg text-slate-300">
-            Talk to our team about your goals. We'll map the fastest path to growth and have your
-            first campaigns live in weeks, not quarters.
+            Connect your channels and see the platform work in a free demo. Live in minutes, not
+            quarters.
           </motion.p>
           <motion.div
             variants={fadeUp}
             className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row"
           >
             <Link to="/contact" className="btn-primary">
-              Start a conversation
+              Book a demo
               <Icon name="arrow" className="h-4 w-4" />
             </Link>
             <Link to="/services" className="btn-ghost">
-              Explore services
+              Explore the platform
             </Link>
           </motion.div>
         </div>

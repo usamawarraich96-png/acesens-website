@@ -5,7 +5,7 @@ import { Bloom, EffectComposer } from '@react-three/postprocessing'
 import * as THREE from 'three'
 
 const NODE_COUNT = 46 // capped for performance
-const BRAND = new THREE.Color('#4FA3F5')
+const BRAND = new THREE.Color('#34d399')
 
 /** Generate brain-ish node positions + short connecting segments once. */
 function useBrain() {
@@ -87,13 +87,13 @@ function Cube() {
           ior={1.25}
           chromaticAberration={0.04}
           transmission={1}
-          color="#bcd8ff"
+          color="#c9f7e4"
         />
       </mesh>
       {/* glowing edges */}
       <lineSegments>
         <edgesGeometry args={[new THREE.BoxGeometry(2.6, 2.6, 2.6)]} />
-        <lineBasicMaterial color="#4FA3F5" transparent opacity={0.6} />
+        <lineBasicMaterial color="#34d399" transparent opacity={0.6} />
       </lineSegments>
     </group>
   )
@@ -104,11 +104,11 @@ function Pedestal() {
     <group position={[0, -2.1, 0]}>
       <mesh>
         <cylinderGeometry args={[1.5, 1.7, 0.35, 48]} />
-        <meshStandardMaterial color="#0e1728" metalness={0.6} roughness={0.4} />
+        <meshStandardMaterial color="#0D1B16" metalness={0.6} roughness={0.4} />
       </mesh>
       <mesh position={[0, 0.2, 0]}>
         <torusGeometry args={[1.5, 0.04, 16, 64]} />
-        <meshBasicMaterial color="#4FA3F5" />
+        <meshBasicMaterial color="#34d399" />
       </mesh>
     </group>
   )
@@ -123,8 +123,8 @@ export default function CubeScene() {
       style={{ width: '100%', height: '100%' }}
     >
       <ambientLight intensity={0.5} />
-      <pointLight position={[5, 5, 5]} intensity={40} color="#4FA3F5" />
-      <pointLight position={[-5, -2, -3]} intensity={25} color="#3B82F6" />
+      <pointLight position={[5, 5, 5]} intensity={40} color="#34d399" />
+      <pointLight position={[-5, -2, -3]} intensity={25} color="#10b981" />
 
       <Float speed={1.4} rotationIntensity={0.3} floatIntensity={0.6}>
         <Cube />

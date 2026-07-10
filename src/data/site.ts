@@ -1,8 +1,8 @@
 export const company = {
   name: 'Acesens',
-  tagline: 'Digital marketing, Amazon growth & AI systems — built to scale.',
+  tagline: 'The AI growth platform — marketing, marketplaces & automation in one.',
   description:
-    'Acesens is a growth partner that combines performance marketing, Amazon expertise, and custom AI systems to turn attention into revenue.',
+    'Acesens unifies marketing intelligence, marketplace automation, and custom AI agents in a single platform, so growth compounds on autopilot.',
   email: 'hello@acesens.com',
   phone: '+1 (415) 555-0182',
   address: '500 Harbor Way, Suite 210, San Francisco, CA 94107',
@@ -23,7 +23,7 @@ export interface NavLink {
 export const navLinks: NavLink[] = [
   { label: 'Home', to: '/' },
   {
-    label: 'Services',
+    label: 'Platform',
     to: '/services',
     children: [
       { label: 'Digital Marketing', to: '/services#digital-marketing' },
@@ -57,20 +57,20 @@ export const budgetOptions = [
 ]
 
 export const stats = [
-  { value: '250+', label: 'Campaigns launched' },
-  { value: '3.8x', label: 'Average ROAS' },
-  { value: '120M+', label: 'Revenue influenced' },
-  { value: '60+', label: 'Brands scaled' },
+  { value: '2400+', label: 'Teams on the platform' },
+  { value: '98.2%', label: 'Automation accuracy' },
+  { value: '4.2x', label: 'Average ROAS' },
+  { value: '24/7', label: 'Autonomous optimization' },
 ]
 
-/** Three core service pillars, each with its own sub-services. */
+/** Three platform modules, each with its own capabilities. */
 export const serviceCategories = [
   {
     id: 'digital-marketing',
     icon: 'megaphone',
     title: 'Digital Marketing',
     summary:
-      'Full-funnel demand generation that gets you found, clicked, and chosen — across search, social, and beyond.',
+      'A full-funnel command center — search, social, and paid channels planned, launched, and optimized from one dashboard.',
     items: [
       { name: 'Web Development', desc: 'Fast, conversion-focused sites and landing pages.' },
       { name: 'Web SEO', desc: 'Technical and content SEO that compounds over time.' },
@@ -86,7 +86,7 @@ export const serviceCategories = [
     icon: 'cart',
     title: 'Amazon Growth',
     summary:
-      'End-to-end Amazon management that lifts rank, protects margin, and grows your share of the buy box.',
+      'Marketplace automation that watches rank, price, and PPC around the clock — protecting margin while you sleep.',
     items: [
       { name: 'Listing Optimization', desc: 'Copy, imagery, and A+ content that convert.' },
       { name: 'PPC Management', desc: 'Sponsored Products, Brands & Display, optimized daily.' },
@@ -100,7 +100,7 @@ export const serviceCategories = [
     icon: 'chip',
     title: 'AI Systems',
     summary:
-      'Custom AI and software that automate the busywork and put intelligence inside your operations.',
+      'Custom AI agents and automations, built on the platform, that remove the busywork from your operations.',
     items: [
       { name: 'Agentic AI', desc: 'Autonomous agents that complete real workflows.' },
       { name: 'AI Bots', desc: 'Chat and voice assistants for support and sales.' },
@@ -118,23 +118,23 @@ export const categoryTags = serviceCategories.map((c) => c.title)
 export const steps = [
   {
     step: '01',
-    title: 'Discover',
-    body: 'We audit your market, funnel, and goals to find the fastest path to growth.',
+    title: 'Connect',
+    body: 'Plug in your channels, storefronts, and data sources in minutes — no code required.',
   },
   {
     step: '02',
-    title: 'Build',
-    body: 'We design the campaigns, listings, and systems tailored to your business.',
+    title: 'Configure',
+    body: 'Set goals and guardrails; the platform tailors playbooks to your brand automatically.',
   },
   {
     step: '03',
-    title: 'Launch',
-    body: 'We ship fast and instrument everything so results are visible from day one.',
+    title: 'Automate',
+    body: 'AI agents launch, monitor, and optimize campaigns and listings around the clock.',
   },
   {
     step: '04',
     title: 'Scale',
-    body: 'We optimize relentlessly, doubling down on what works to compound returns.',
+    body: 'Live insight and forecasts show what compounds — double down with confidence.',
   },
 ]
 

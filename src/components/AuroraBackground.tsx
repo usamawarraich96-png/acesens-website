@@ -24,12 +24,12 @@ export default function AuroraBackground() {
             <path
               d="M10 90 H70 V30 H120 M90 90 V150 H150 M10 30 H40 V10"
               fill="none"
-              stroke="#4FA3F5"
+              stroke="#34d399"
               strokeWidth="1"
             />
-            <circle cx="70" cy="90" r="2.5" fill="#4FA3F5" />
-            <circle cx="120" cy="30" r="2.5" fill="#4FA3F5" />
-            <circle cx="150" cy="150" r="2.5" fill="#4FA3F5" />
+            <circle cx="70" cy="90" r="2.5" fill="#34d399" />
+            <circle cx="120" cy="30" r="2.5" fill="#34d399" />
+            <circle cx="150" cy="150" r="2.5" fill="#34d399" />
           </pattern>
         </defs>
         <rect width="100%" height="100%" fill="url(#circuit)" />

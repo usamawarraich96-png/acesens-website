@@ -113,7 +113,7 @@ export default function Navbar() {
 
           <div className="hidden lg:block">
             <Link to="/contact" className="btn-primary !px-5 !py-2.5">
-              Book a Call
+              Get Started
               <Icon name="arrow" className="h-4 w-4" />
             </Link>
           </div>
@@ -183,7 +183,7 @@ export default function Navbar() {
               ))}
               <li className="pt-2">
                 <Link to="/contact" className="btn-primary w-full">
-                  Book a Call
+                  Get Started
                   <Icon name="arrow" className="h-4 w-4" />
                 </Link>
               </li>

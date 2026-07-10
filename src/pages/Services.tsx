@@ -34,7 +34,7 @@ function CategorySection({
               <Icon name={category.icon} className="h-8 w-8" />
             </motion.div>
             <motion.p variants={fadeUp} className="eyebrow mt-6">
-              {`0${index + 1} — Pillar`}
+              {`Module 0${index + 1}`}
             </motion.p>
             <motion.h2
               variants={fadeUp}
@@ -87,9 +87,9 @@ function Process() {
     <section className="section-alt py-24">
       <div className="container-page">
         <SectionHeading
-          eyebrow="Engagement"
-          title="How a partnership unfolds"
-          subtitle="A structured path from first conversation to compounding growth."
+          eyebrow="Getting started"
+          title="From connect to compounding"
+          subtitle="Onboarding measured in minutes — results measured in weeks."
         />
         <motion.ol
           variants={staggerContainer(0.12)}

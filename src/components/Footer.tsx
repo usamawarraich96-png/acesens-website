@@ -141,11 +141,11 @@ function ContactBlock() {
             Ready to scale your business?
           </h3>
           <p className="mt-3 text-slate-300">
-            Book a free 30-minute strategy session. We'll map the fastest path to growth for your
-            brand — no obligation.
+            See the platform live in a free 30-minute demo. We'll connect a sample account and
+            show your fastest path to growth — no obligation.
           </p>
           <ul className="mt-6 space-y-2 text-sm text-slate-200">
-            {['Tailored growth plan', 'Channel & ROI audit', 'Clear next steps'].map((x) => (
+            {['Live platform walkthrough', 'Channel & ROI audit', 'Tailored rollout plan'].map((x) => (
               <li key={x} className="flex items-center gap-2">
                 <Icon name="check" className="h-4 w-4 text-brand-300" />
                 {x}
@@ -153,7 +153,7 @@ function ContactBlock() {
             ))}
           </ul>
           <Link to="/contact" className="btn-primary mt-8 w-full">
-            Schedule Free Consultation
+            Book a Free Demo
             <Icon name="arrow" className="h-4 w-4" />
           </Link>
         </div>
@@ -164,7 +164,7 @@ function ContactBlock() {
 
 const footerCols = [
   {
-    title: 'Services',
+    title: 'Platform',
     links: serviceCategories.map((c) => ({ label: c.title, to: `/services#${c.id}` })),
   },
   {

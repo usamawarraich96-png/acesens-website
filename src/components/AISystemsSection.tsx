@@ -93,7 +93,7 @@ export default function AISystemsSection() {
         <SectionHeading
           eyebrow="Custom AI Systems"
           title="Intelligence, engineered end to end"
-          subtitle="From strategy to deployment, we build the AI systems that run inside your business."
+          subtitle="The intelligence layer of the platform — from strategy to deployed, self-improving agents inside your business."
         />
 
         {/* Cube + surrounding feature cards, connected by glowing lines */}
@@ -112,7 +112,7 @@ export default function AISystemsSection() {
                 y1={y}
                 x2="50"
                 y2="50"
-                stroke="#4FA3F5"
+                stroke="#34d399"
                 strokeWidth="0.3"
                 className="flow-line"
                 opacity="0.7"
@@ -125,7 +125,7 @@ export default function AISystemsSection() {
                 y1={y}
                 x2="50"
                 y2="50"
-                stroke="#4FA3F5"
+                stroke="#34d399"
                 strokeWidth="0.3"
                 className="flow-line"
                 opacity="0.7"

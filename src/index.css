@@ -40,7 +40,7 @@
   /* Per-section radial gradient: lighter toward the centre, near-black at edges */
   .section-gradient,
   .section-alt {
-    background: radial-gradient(120% 85% at 50% 45%, #101f33 0%, #0a1220 48%, #050b14 100%);
+    background: radial-gradient(120% 85% at 50% 45%, #10231b 0%, #0a1512 48%, #050b09 100%);
   }
 
   /* iOS-style white frosted glass: light translucent fill, white hairline
@@ -51,21 +51,21 @@
       shadow-glass backdrop-blur-xl;
   }
   .glass-hover {
-    @apply transition-all duration-300 hover:-translate-y-1 hover:border-white/20
-      hover:from-white/[0.16] hover:to-white/[0.06];
+    @apply transition-all duration-300 hover:-translate-y-1 hover:border-brand-300/30
+      hover:from-white/[0.16] hover:to-white/[0.06] hover:shadow-glow-accent;
   }
 
-  /* Primary — solid accent blue, white text, arrow, glow on hover */
+  /* Primary — luminous green fill, dark text, arrow, glow on hover */
   .btn-primary {
     @apply relative inline-flex items-center justify-center gap-2 rounded-full
-      bg-brand-500 px-6 py-3 text-sm font-semibold text-white
-      transition-all hover:bg-brand-400 hover:shadow-glow;
+      bg-brand-400 px-6 py-3 text-sm font-semibold text-ink-950
+      transition-all hover:bg-brand-300 hover:shadow-glow;
   }
 
-  /* Secondary — transparent, thin light border, lightens on hover */
+  /* Secondary — transparent pill, thin green border, lightens on hover */
   .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/25
-      px-6 py-3 text-sm font-semibold text-white transition-all hover:border-white/50 hover:bg-white/10;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-brand-400/40
+      px-6 py-3 text-sm font-semibold text-white transition-all hover:border-brand-300 hover:bg-brand-400/10;
   }
 
   /* Section 'View all →' link (add `group` in markup for the arrow nudge) */
@@ -106,14 +106,14 @@
   width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #050b14;
+  background: #050b09;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1a2b48;
+  background: #173226;
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3b82f6;
+  background: #10b981;
 }
 
 @media (prefers-reduced-motion: reduce) {

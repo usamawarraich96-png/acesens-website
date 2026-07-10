@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import AISystemsSection from '../components/AISystemsSection'
 import AuroraBackground from '../components/AuroraBackground'
 import CTASection from '../components/CTASection'
-import HeroVisual from '../components/HeroVisual'
+import DashboardMockup, { FeatureCards } from '../components/DashboardMockup'
 import Icon from '../components/Icon'
 import Page from '../components/Page'
 import ReviewsMarquee from '../components/ReviewsMarquee'
@@ -17,57 +17,64 @@ function Hero() {
   return (
     <section className="relative overflow-hidden">
       <AuroraBackground />
-      <div className="container-page grid items-center gap-12 py-20 lg:grid-cols-2 lg:py-28">
-        <motion.div variants={staggerContainer(0.12, 0.1)} initial="hidden" animate="show">
+      <div className="container-page flex flex-col items-center py-20 text-center lg:py-24">
+        <motion.div
+          variants={staggerContainer(0.12, 0.1)}
+          initial="hidden"
+          animate="show"
+          className="flex w-full flex-col items-center"
+        >
           <motion.p variants={fadeUp} className="eyebrow">
             AI. Automation. Growth.
           </motion.p>
 
           <motion.h1
             variants={fadeUp}
-            className="mt-4 font-display text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl"
+            className="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl"
           >
-            Engineering
+            One platform for
             <br />
             <span className="gradient-text">measurable growth</span>
           </motion.h1>
 
-          <motion.p variants={fadeUp} className="mt-6 max-w-lg text-lg text-slate-400">
-            Acesens blends performance marketing, Amazon expertise, and custom AI systems into one
-            engine that turns attention into revenue — and revenue into a system that compounds.
+          <motion.p variants={fadeUp} className="mt-6 max-w-xl text-lg text-slate-400">
+            Acesens unifies marketing intelligence, marketplace automation, and custom AI agents —
+            so your growth compounds on autopilot.
           </motion.p>
 
-          <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-4">
+          <motion.div variants={fadeUp} className="mt-8 flex flex-wrap justify-center gap-4">
             <Link to="/contact" className="btn-primary">
-              Book a Strategy Call
+              Get Started
               <Icon name="arrow" className="h-4 w-4" />
             </Link>
             <Link to="/services" className="btn-ghost">
-              Explore Services
+              Explore the Platform
             </Link>
-          </motion.div>
-
-          <motion.div variants={fadeUp} className="mt-12">
-            <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
-              Trusted by innovative brands
-            </p>
-            <div className="mt-4 flex flex-wrap items-center gap-x-8 gap-y-3">
-              {trustedBrands.map((b) => (
-                <span key={b} className="text-lg font-bold tracking-tight text-slate-400/70">
-                  {b}
-                </span>
-              ))}
-            </div>
           </motion.div>
         </motion.div>
 
+        {/* reference-style glass feature cards */}
+        <FeatureCards />
+
+        {/* floating glass dashboard */}
+        <DashboardMockup />
+
         <motion.div
-          initial={{ opacity: 0, scale: 0.92 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.25 }}
-          className="hidden lg:block"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.1, duration: 0.8 }}
+          className="mt-16"
         >
-          <HeroVisual />
+          <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
+            Trusted by innovative brands
+          </p>
+          <div className="mt-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+            {trustedBrands.map((b) => (
+              <span key={b} className="text-lg font-bold tracking-tight text-slate-400/70">
+                {b}
+              </span>
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
@@ -97,10 +104,10 @@ function Services() {
     <section className="section-gradient py-24">
       <div className="container-page">
         <SectionHeading
-          eyebrow="Our Services"
-          title="Three pillars of growth"
-          subtitle="Adopt one, or let all three work together as a single growth engine."
-          link={{ label: 'View all services', to: '/services' }}
+          eyebrow="The Platform"
+          title="Three modules, one growth engine"
+          subtitle="Adopt one module, or let all three compound together on a single platform."
+          link={{ label: 'View the full platform', to: '/services' }}
         />
 
         <motion.div
@@ -152,7 +159,7 @@ function PortfolioPreview() {
         <SectionHeading
           eyebrow="Our Portfolio"
           title="Work that moved the numbers"
-          subtitle="A selection of engagements across our three pillars."
+          subtitle="Customer stories from across the platform's three modules."
           link={{ label: 'View all projects', to: '/portfolio' }}
         />
 
@@ -196,8 +203,8 @@ function Process() {
       <div className="container-page">
         <SectionHeading
           eyebrow="How it works"
-          title="From kickoff to compounding growth"
-          subtitle="A proven path that gets you launched and scaling fast."
+          title="Live in minutes, compounding in weeks"
+          subtitle="Connect your stack and let the platform take it from there."
         />
         <motion.div
           variants={staggerContainer(0.12)}

@@ -16,12 +16,12 @@ function Defs() {
   return (
     <defs>
       <linearGradient id="art-bg" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stopColor="#0c1a2e" />
-        <stop offset="1" stopColor="#0a1424" />
+        <stop offset="0" stopColor="#0c1f18" />
+        <stop offset="1" stopColor="#0a1712" />
       </linearGradient>
       <linearGradient id="art-blue" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0" stopColor="#4FA3F5" />
-        <stop offset="1" stopColor="#3B82F6" />
+        <stop offset="0" stopColor="#34d399" />
+        <stop offset="1" stopColor="#10b981" />
       </linearGradient>
     </defs>
   )
@@ -34,14 +34,14 @@ export function DigitalMarketingArt({ className }: ArtProps) {
     <svg viewBox="0 0 400 240" className={className} preserveAspectRatio="xMidYMid slice" aria-hidden>
       <Defs />
       <rect width="400" height="240" fill={frame.bg} />
-      <g opacity="0.5" stroke="#4FA3F5" strokeWidth="0.5">
+      <g opacity="0.5" stroke="#34d399" strokeWidth="0.5">
         {[60, 120, 180].map((y) => (
           <line key={y} x1="24" y1={y} x2="376" y2={y} />
         ))}
       </g>
 
       {/* window chrome */}
-      <g fill="#4FA3F5" opacity="0.7">
+      <g fill="#34d399" opacity="0.7">
         <circle cx="30" cy="26" r="3.5" />
         <circle cx="42" cy="26" r="3.5" />
         <circle cx="54" cy="26" r="3.5" />
@@ -49,7 +49,7 @@ export function DigitalMarketingArt({ className }: ArtProps) {
 
       {/* donut / progress ring */}
       <g transform="translate(96 128)">
-        <circle r="26" fill="none" stroke="#1c3355" strokeWidth="9" />
+        <circle r="26" fill="none" stroke="#14382a" strokeWidth="9" />
         <circle
           r="26"
           fill="none"
@@ -84,7 +84,7 @@ export function DigitalMarketingArt({ className }: ArtProps) {
       <polyline
         points="30,205 80,190 130,198 180,175 230,182 280,158 330,150 372,132"
         fill="none"
-        stroke="#4FA3F5"
+        stroke="#34d399"
         strokeWidth="2.5"
         strokeLinecap="round"
         strokeLinejoin="round"
@@ -104,26 +104,26 @@ export function AmazonGrowthArt({ className }: ArtProps) {
       <polyline
         points="30,200 100,170 170,180 240,120 310,90 372,60"
         fill="none"
-        stroke="#4FA3F5"
+        stroke="#34d399"
         strokeWidth="2"
         strokeDasharray="4 6"
         opacity="0.7"
       />
-      <path d="M372 60 l-14 2 l6 8 Z" fill="#4FA3F5" opacity="0.9" />
+      <path d="M372 60 l-14 2 l6 8 Z" fill="#34d399" opacity="0.9" />
 
       {/* pedestal */}
-      <ellipse cx="150" cy="196" rx="70" ry="12" fill="#12233d" />
+      <ellipse cx="150" cy="196" rx="70" ry="12" fill="#123023" />
 
       {/* product box (isometric) */}
       <g transform="translate(150 150)" stroke="url(#art-blue)" strokeWidth="2" strokeLinejoin="round">
-        <path d="M-40,-8 L0,-28 L40,-8 L0,12 Z" fill="#12294a" />
-        <path d="M-40,-8 L-40,34 L0,54 L0,12 Z" fill="#0e2140" />
-        <path d="M40,-8 L40,34 L0,54 L0,12 Z" fill="#0b1c36" />
-        <path d="M0,12 L0,-6 M-20,-13 L20,-13" stroke="#4FA3F5" strokeWidth="1.5" opacity="0.6" />
+        <path d="M-40,-8 L0,-28 L40,-8 L0,12 Z" fill="#123a2a" />
+        <path d="M-40,-8 L-40,34 L0,54 L0,12 Z" fill="#0e3122" />
+        <path d="M40,-8 L40,34 L0,54 L0,12 Z" fill="#0b2419" />
+        <path d="M0,12 L0,-6 M-20,-13 L20,-13" stroke="#34d399" strokeWidth="1.5" opacity="0.6" />
       </g>
 
       {/* stars */}
-      <g transform="translate(255 150)" fill="#4FA3F5">
+      <g transform="translate(255 150)" fill="#34d399">
         {[0, 1, 2, 3, 4].map((i) => (
           <path
             key={i}
@@ -133,7 +133,7 @@ export function AmazonGrowthArt({ className }: ArtProps) {
           />
         ))}
       </g>
-      <text x="255" y="120" fontSize="13" fill="#9FB0C6">
+      <text x="255" y="120" fontSize="13" fill="#9FB5A9">
         Best Seller
       </text>
     </svg>
@@ -148,10 +148,10 @@ export function AISystemsArt({ className }: ArtProps) {
       <rect width="400" height="240" fill={frame.bg} />
 
       {/* circuit traces */}
-      <g stroke="#274a72" strokeWidth="1.5" fill="none">
+      <g stroke="#1e4d38" strokeWidth="1.5" fill="none">
         <path d="M40 60 H120 V110 M360 70 H280 V150 M40 190 H140 V150 M360 200 H250 V110" />
       </g>
-      <g fill="#4FA3F5">
+      <g fill="#34d399">
         <circle cx="40" cy="60" r="3" />
         <circle cx="360" cy="70" r="3" />
         <circle cx="40" cy="190" r="3" />
@@ -160,9 +160,9 @@ export function AISystemsArt({ className }: ArtProps) {
 
       {/* central chip */}
       <g transform="translate(200 120)">
-        <rect x="-52" y="-46" width="104" height="92" rx="14" fill="#0e2340" stroke="url(#art-blue)" strokeWidth="2" />
+        <rect x="-52" y="-46" width="104" height="92" rx="14" fill="#0e2f22" stroke="url(#art-blue)" strokeWidth="2" />
         {/* chip pins */}
-        <g stroke="#4FA3F5" strokeWidth="2">
+        <g stroke="#34d399" strokeWidth="2">
           {[-30, -10, 10, 30].map((x) => (
             <line key={`t${x}`} x1={x} y1="-46" x2={x} y2="-56" />
           ))}
@@ -174,7 +174,7 @@ export function AISystemsArt({ className }: ArtProps) {
         <path
           d="M-2,-24 a14,14 0 0 0 -16,10 a12,12 0 0 0 -2,20 a12,12 0 0 0 16,8 M2,-24 a14,14 0 0 1 16,10 a12,12 0 0 1 2,20 a12,12 0 0 1 -16,8 M0,-26 V26"
           fill="none"
-          stroke="#8fc0f7"
+          stroke="#a7f3d0"
           strokeWidth="2"
           strokeLinecap="round"
         />
@@ -184,7 +184,7 @@ export function AISystemsArt({ className }: ArtProps) {
           [-6, 10],
           [10, 14],
         ].map(([x, y], i) => (
-          <circle key={i} cx={x} cy={y} r="2.2" fill="#4FA3F5" />
+          <circle key={i} cx={x} cy={y} r="2.2" fill="#34d399" />
         ))}
       </g>
     </svg>
