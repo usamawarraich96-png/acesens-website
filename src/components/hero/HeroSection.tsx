@@ -3,7 +3,6 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import Icon from '../Icon'
 import CinematicBackground from './CinematicBackground'
-import WorldMapCard from './WorldMapCard'
 
 /** Reference hero artwork. Commit the supplied render to this path. */
 const HERO_IMAGE = '/hero-reference.png'
@@ -107,10 +106,6 @@ export default function HeroSection() {
               <Icon name="play" className="h-4 w-4 text-brand-300" />
               View Our Systems
             </Link>
-          </motion.div>
-
-          <motion.div variants={fadeUp} className="mt-10">
-            <WorldMapCard />
           </motion.div>
         </motion.div>
       </div>
