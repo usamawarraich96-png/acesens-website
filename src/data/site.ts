@@ -23,7 +23,7 @@ export interface NavLink {
 export const navLinks: NavLink[] = [
   { label: 'Home', to: '/' },
   {
-    label: 'Platform',
+    label: 'What We Do',
     to: '/services',
     children: [
       { label: 'Digital Marketing', to: '/services#digital-marketing' },
@@ -31,11 +31,10 @@ export const navLinks: NavLink[] = [
       { label: 'AI Systems', to: '/services#ai-systems' },
     ],
   },
+  { label: 'Services', to: '/services' },
+  { label: 'Our Impact', to: '/case-studies' },
   { label: 'Portfolio', to: '/portfolio' },
-  { label: 'Case Studies', to: '/case-studies' },
   { label: 'About Us', to: '/about' },
-  { label: 'Insights', to: '/insights' },
-  { label: 'Contact', to: '/contact' },
 ]
 
 /** Placeholder brand marks for the hero "trusted by" row. */

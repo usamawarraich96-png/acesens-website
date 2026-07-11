@@ -4,6 +4,65 @@ interface IconProps {
 }
 
 const paths: Record<string, JSX.Element> = {
+  users: (
+    <>
+      <circle cx="9" cy="8" r="3" />
+      <path d="M3.5 19a5.5 5.5 0 0 1 11 0" />
+      <path d="M16 6.2a3 3 0 0 1 0 5.6M18 19a5.5 5.5 0 0 0-3-4.9" />
+    </>
+  ),
+  doc: (
+    <>
+      <path d="M7 3h7l4 4v14H7z" />
+      <path d="M14 3v4h4M9.5 12h6M9.5 15.5h6" />
+    </>
+  ),
+  target: (
+    <>
+      <circle cx="12" cy="12" r="8.5" />
+      <circle cx="12" cy="12" r="4.5" />
+      <circle cx="12" cy="12" r="1" />
+    </>
+  ),
+  pie: (
+    <>
+      <path d="M12 3a9 9 0 1 0 9 9h-9Z" />
+      <path d="M12 3v9h9A9 9 0 0 0 12 3Z" />
+    </>
+  ),
+  code: <path d="M8 8l-4 4 4 4m8-8l4 4-4 4M13.5 6l-3 12" />,
+  robot: (
+    <>
+      <rect x="5" y="8" width="14" height="10" rx="2.5" />
+      <path d="M12 8V4.5M12 4.5a1.5 1.5 0 1 0 0-.01" />
+      <circle cx="9.5" cy="13" r="1.2" />
+      <circle cx="14.5" cy="13" r="1.2" />
+      <path d="M3 12v3m18-3v3" />
+    </>
+  ),
+  handshake: (
+    <>
+      <path d="M3 12l4-4 5 3 5-3 4 4" />
+      <path d="M7 8l3.5 3.5a2 2 0 0 0 2.8 0L17 8" />
+      <path d="M12 14l2 2m-4-4l2 2" />
+    </>
+  ),
+  globe: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18" />
+    </>
+  ),
+  infinity: (
+    <path d="M6.5 9a3 3 0 1 0 0 6c2.5 0 3-3 5.5-3s3 3 5.5 3a3 3 0 1 0 0-6c-2.5 0-3 3-5.5 3S9 9 6.5 9Z" />
+  ),
+  play: <path d="M8 5v14l11-7z" />,
+  gauge: (
+    <>
+      <path d="M4 15a8 8 0 1 1 16 0" />
+      <path d="M12 15l4-4" />
+    </>
+  ),
   radar: (
     <>
       <circle cx="12" cy="12" r="9" />

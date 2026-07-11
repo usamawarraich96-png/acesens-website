@@ -7,6 +7,18 @@
     scroll-behavior: smooth;
   }
 
+  /* Lenis smooth scroll */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+
   body {
     @apply bg-ink-950 font-sans font-light text-slate-400 antialiased;
   }
@@ -51,11 +63,39 @@
   /* Per-section radial gradient: lifted navy centre, near-black edges */
   .section-gradient,
   .section-alt {
-    background: radial-gradient(120% 85% at 50% 45%, #131b36 0%, #0a0f22 48%, #070b18 100%);
+    background: radial-gradient(120% 85% at 50% 45%, #0d1a2d 0%, #0a1626 50%, #07121f 100%);
   }
 
-  /* Liquid glass: light translucent fill, white hairline, backdrop blur.
-     Accents stay confined to details inside the card. */
+  /* Metallic chrome text (headings / logo wordmark) */
+  .chrome-text {
+    background-image: linear-gradient(180deg, #ffffff 0%, #d5dae2 42%, #9aa4b3 60%, #eef1f5 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Glass reflection sweep — attach to a relatively-positioned glass card */
+  .sweep {
+    position: relative;
+    overflow: hidden;
+  }
+  .sweep::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(
+      100deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.13) 48%,
+      transparent 66%
+    );
+    transform: translateX(-120%) skewX(-18deg);
+    animation: sweep 9s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  /* Liquid glass: light translucent fill, white hairline, backdrop blur. */
   .card,
   .glass {
     @apply rounded-card border border-white/[0.12] bg-gradient-to-b from-white/[0.10] to-white/[0.04]
@@ -66,23 +106,24 @@
       hover:from-white/[0.16] hover:to-white/[0.06] hover:shadow-glow;
   }
 
-  /* Primary — vivid orange gradient CTA, glow on hover (reference style) */
+  /* Primary — electric-blue gradient CTA, chrome edge, glow on hover */
   .btn-primary {
     @apply relative inline-flex items-center justify-center gap-2 rounded-full
-      bg-gradient-to-r from-accent-500 to-accent-400 px-6 py-3 text-sm font-semibold text-white
-      transition-all hover:shadow-glow-accent hover:brightness-110;
+      bg-gradient-to-r from-brand-500 to-brand-300 px-6 py-3 text-sm font-semibold text-white
+      shadow-glow transition-all hover:brightness-110;
   }
 
-  /* Secondary — transparent pill, thin electric-blue border */
+  /* Secondary — glassmorphism pill with chrome border */
   .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border border-brand-400/40
-      px-6 py-3 text-sm font-semibold text-white transition-all hover:border-brand-300 hover:bg-brand-400/10;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-white/15
+      bg-white/[0.06] px-6 py-3 text-sm font-semibold text-white backdrop-blur-md
+      transition-all hover:border-white/30 hover:bg-white/10;
   }
 
   /* Section 'View all →' link (add `group` in markup for the arrow nudge) */
   .view-all {
-    @apply inline-flex items-center gap-1.5 text-sm font-semibold text-accent-400
-      transition-colors hover:text-accent-300;
+    @apply inline-flex items-center gap-1.5 text-sm font-semibold text-brand-400
+      transition-colors hover:text-brand-300;
   }
 
   /* Infinite right-to-left marquee track (content is duplicated in markup) */
@@ -98,6 +139,13 @@
       transparent
     );
     mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+  }
+}
+
+/* Orbital ring rotation (driven with inline duration/direction) */
+@keyframes orbit-rotate {
+  to {
+    transform: rotate(360deg);
   }
 }
 

@@ -1,125 +1,15 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import AuroraBackground from '../components/AuroraBackground'
 import CardImage from '../components/CardImage'
 import CTASection from '../components/CTASection'
-import DashboardMockup, { FeatureCards } from '../components/DashboardMockup'
+import HeroSection from '../components/hero/HeroSection'
 import Icon from '../components/Icon'
 import Page from '../components/Page'
 import ReviewsMarquee from '../components/ReviewsMarquee'
 import SectionHeading from '../components/SectionHeading'
 import StatItem from '../components/StatItem'
 import { fadeUp, revealViewport, staggerContainer } from '../lib/motion'
-import { projects, serviceCategories, stats, steps, trustedBrands } from '../data/site'
-
-function Hero() {
-  return (
-    <section className="relative overflow-hidden">
-      <AuroraBackground />
-      <div className="container-page flex flex-col items-center py-20 text-center lg:py-24">
-        <motion.div
-          variants={staggerContainer(0.12, 0.1)}
-          initial="hidden"
-          animate="show"
-          className="flex w-full flex-col items-center"
-        >
-          <motion.p variants={fadeUp} className="eyebrow">
-            AI. Automation. Growth.
-          </motion.p>
-
-          <motion.h1
-            variants={fadeUp}
-            className="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-6xl"
-          >
-            One platform for
-            <br />
-            <span className="gradient-text-live">measurable growth</span>
-          </motion.h1>
-
-          <motion.p variants={fadeUp} className="mt-6 max-w-xl text-lg text-slate-400">
-            Acesens unifies marketing intelligence, marketplace automation, and custom AI agents —
-            so your growth compounds on autopilot.
-          </motion.p>
-
-          <motion.div variants={fadeUp} className="mt-8 flex flex-wrap justify-center gap-4">
-            <Link to="/contact" className="btn-primary">
-              Get Started
-              <Icon name="arrow" className="h-4 w-4" />
-            </Link>
-            <Link to="/services" className="btn-ghost">
-              Explore the Platform
-            </Link>
-          </motion.div>
-        </motion.div>
-
-        {/* reference-style glass feature cards */}
-        <FeatureCards />
-
-        {/* floating glass dashboard, flanked by brand imagery on wide screens */}
-        <div className="relative w-full">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.9, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute -left-4 top-24 z-10 hidden w-48 -rotate-3 xl:block"
-          >
-            <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
-              className="glass overflow-hidden p-1.5"
-            >
-              <img
-                src="/img/s1-12.jpg"
-                alt="AI Systems"
-                loading="lazy"
-                className="aspect-[6/5] w-full rounded-[10px] object-cover"
-              />
-            </motion.div>
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 1.05, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="absolute -right-4 top-40 z-10 hidden w-48 rotate-3 xl:block"
-          >
-            <motion.div
-              animate={{ y: [0, 10, 0] }}
-              transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-              className="glass overflow-hidden p-1.5"
-            >
-              <img
-                src="/img/s1-19.jpg"
-                alt="Let's build something extraordinary"
-                loading="lazy"
-                className="aspect-[6/5] w-full rounded-[10px] object-cover"
-              />
-            </motion.div>
-          </motion.div>
-
-          <DashboardMockup />
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.1, duration: 0.8 }}
-          className="mt-16"
-        >
-          <p className="text-xs uppercase tracking-[0.2em] text-slate-500">
-            Trusted by innovative brands
-          </p>
-          <div className="mt-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
-            {trustedBrands.map((b) => (
-              <span key={b} className="text-lg font-bold tracking-tight text-slate-400/70">
-                {b}
-              </span>
-            ))}
-          </div>
-        </motion.div>
-      </div>
-    </section>
-  )
-}
+import { projects, serviceCategories, stats, steps } from '../data/site'
 
 function Stats() {
   return (
@@ -274,7 +164,7 @@ function Process() {
 export default function Home() {
   return (
     <Page>
-      <Hero />
+      <HeroSection />
       <Stats />
       <Services />
       <PortfolioPreview />

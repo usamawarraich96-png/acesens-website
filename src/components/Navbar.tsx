@@ -107,14 +107,14 @@ export default function Navbar() {
 
           <ul className="hidden items-center gap-0.5 lg:flex">
             {navLinks.map((link) => (
-              <DesktopItem key={link.to} link={link} />
+              <DesktopItem key={link.label} link={link} />
             ))}
           </ul>
 
           <div className="hidden lg:block">
-            <Link to="/contact" className="btn-primary !px-5 !py-2.5">
-              Get Started
-              <Icon name="arrow" className="h-4 w-4" />
+            <Link to="/contact" className="btn-ghost group !px-5 !py-2.5">
+              Let's Talk
+              <span className="h-2 w-2 rounded-full bg-accent-500 shadow-[0_0_10px_2px_rgba(255,122,26,0.6)] transition-transform group-hover:scale-125" />
             </Link>
           </div>
 
@@ -154,7 +154,7 @@ export default function Navbar() {
           >
             <ul className="container-page flex flex-col gap-1 py-4">
               {navLinks.map((link) => (
-                <li key={link.to}>
+                <li key={link.label}>
                   <NavLink
                     to={link.to}
                     className={({ isActive }) =>
@@ -183,7 +183,7 @@ export default function Navbar() {
               ))}
               <li className="pt-2">
                 <Link to="/contact" className="btn-primary w-full">
-                  Get Started
+                  Let's Talk
                   <Icon name="arrow" className="h-4 w-4" />
                 </Link>
               </li>
