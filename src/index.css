@@ -60,6 +60,11 @@
     @apply bg-gradient-to-r from-accent-300 to-accent-500 bg-clip-text text-transparent;
   }
 
+  /* Polar white — crisp icy white with a faint cool tint, for hero stats */
+  .stat-polar {
+    @apply bg-gradient-to-b from-white via-white to-slate-300 bg-clip-text text-transparent;
+  }
+
   /* Per-section radial gradient: lifted navy centre, near-black edges */
   .section-gradient,
   .section-alt {
