@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 import Icon from '../Icon'
 import CinematicBackground from './CinematicBackground'
 
-/** Reference hero artwork. Commit the supplied render to this path. */
-const HERO_IMAGE = '/hero-reference.png'
+/** Reference hero artwork committed to public/. */
+const HERO_IMAGE = '/Hero.png'
 
 const eyebrow = [
   ['AI.', 'text-brand-400'],
@@ -30,8 +30,9 @@ export default function HeroSection() {
   const [imgOk, setImgOk] = useState(true)
 
   return (
-    <section className="relative min-h-[100svh] overflow-hidden pt-24">
-      {/* reference artwork (or animated fallback) */}
+    <section className="relative min-h-[100svh] overflow-hidden pt-24 lg:min-h-0 lg:h-[66.67vw] lg:max-h-[125vh]">
+      {/* reference artwork (or animated fallback). On lg the section matches
+          the 3:2 artwork so the whole composition shows without cropping. */}
       {imgOk ? (
         <motion.img
           src={HERO_IMAGE}
@@ -41,21 +42,25 @@ export default function HeroSection() {
           initial={{ scale: 1.06, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 1.4, ease: [0.22, 1, 0.36, 1] }}
-          className="absolute inset-0 -z-10 h-full w-full object-cover object-center"
+          className="absolute inset-0 -z-10 h-full w-full object-cover object-[62%_center] lg:object-center"
         />
       ) : (
         <CinematicBackground mx={0} my={0} />
       )}
 
-      {/* top scrim — hides the artwork's baked navigation */}
-      <div className="pointer-events-none absolute inset-x-0 top-0 z-0 h-28 bg-gradient-to-b from-ink-950 via-ink-950/85 to-transparent" />
-      {/* left scrim — hides the artwork's baked left text */}
-      <div className="pointer-events-none absolute inset-y-0 left-0 z-0 w-[46%] bg-gradient-to-r from-ink-950 via-ink-950/92 to-transparent" />
+      {/* mobile dim so the real text stays readable over the busy artwork */}
+      <div className="pointer-events-none absolute inset-0 z-0 bg-ink-950/88 lg:hidden" />
+      {/* top scrim — solid band + fade fully hides the artwork's baked nav */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 z-0 h-[76px] bg-ink-950" />
+      <div className="pointer-events-none absolute inset-x-0 top-[76px] z-0 h-12 bg-gradient-to-b from-ink-950 to-transparent" />
+      {/* left scrim — solid block + fade hides the artwork's baked left text */}
+      <div className="pointer-events-none absolute inset-y-0 left-0 z-0 hidden w-[30%] bg-ink-950 lg:block" />
+      <div className="pointer-events-none absolute inset-y-0 left-[30%] z-0 hidden w-[22%] bg-gradient-to-r from-ink-950 to-transparent lg:block" />
       {/* bottom grounding */}
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-0 h-24 bg-gradient-to-t from-ink-950 to-transparent" />
 
-      {/* real, selectable left column */}
-      <div className="container-page relative z-10 flex min-h-[calc(100svh-6rem)] items-center pb-16">
+      {/* real, selectable left column, anchored far-left like the artwork */}
+      <div className="relative z-10 flex min-h-[calc(100svh-6rem)] items-center px-6 pb-16 lg:h-full lg:min-h-0 lg:px-[3.2vw]">
         <motion.div
           initial="hidden"
           animate="show"
@@ -75,7 +80,7 @@ export default function HeroSection() {
 
           <motion.h1
             variants={fadeUp}
-            className="mt-5 font-display text-4xl font-bold leading-[1.05] tracking-tight text-white sm:text-5xl"
+            className="mt-5 font-display text-4xl font-bold leading-[1.04] tracking-tight text-white sm:text-5xl lg:text-[2.9rem] xl:text-5xl"
           >
             Engineering
             <br />
