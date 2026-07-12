@@ -1,8 +1,11 @@
-import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { animate, motion, useMotionValue, useReducedMotion } from 'framer-motion'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import Icon from './Icon'
 import SectionHeading from './SectionHeading'
 import { reviews } from '../data/site'
+
+const GAP = 24 // matches gap-6 on the track
+const SPEED = 42 // auto-glide pixels per second
 
 function Stars({ rating }: { rating: number }) {
   return (
@@ -11,7 +14,7 @@ function Stars({ rating }: { rating: number }) {
         <Icon
           key={i}
           name="star"
-          className={`h-4 w-4 ${i < rating ? 'fill-accent-400 text-accent-400' : 'fill-transparent text-slate-500'}`}
+          className={`h-4 w-4 ${i < rating ? 'fill-brand-300 text-brand-300' : 'fill-transparent text-slate-500'}`}
         />
       ))}
     </div>
@@ -53,20 +56,79 @@ function ReviewCard({ review }: { review: (typeof reviews)[number] }) {
 }
 
 /**
- * Continuously scrolling reviews marquee (right → left). The track is
- * duplicated so the loop is seamless; it pauses on hover, and the global
- * prefers-reduced-motion rule (in index.css) freezes it and lets the row
- * scroll manually. Optional prev/next arrows act as a secondary control:
- * they pause the auto-scroll and nudge the row.
+ * Reviews carousel with two behaviors:
+ *
+ *  • Auto mode (default): the row glides continuously right → left in a seamless
+ *    loop. Hovering the row pauses the glide; moving the cursor away resumes it.
+ *  • Manual mode: clicking an arrow takes control and steps through the reviews
+ *    one card at a time. The Back arrow is hidden at the first review and the
+ *    Next arrow is hidden once the last review is reached — so at the end you
+ *    can only go back, and going back brings the Next arrow into existence again.
+ *
+ * Respects prefers-reduced-motion (no auto-glide; arrows still work).
  */
 export default function ReviewsMarquee() {
-  const [offset, setOffset] = useState(0)
-  const [paused, setPaused] = useState(false)
+  const N = reviews.length
+  const viewportRef = useRef<HTMLDivElement>(null)
+  const trackRef = useRef<HTMLDivElement>(null)
+  const x = useMotionValue(0)
+  const hovering = useRef(false)
+  const reduced = useReducedMotion()
 
-  function nudge(dir: -1 | 1) {
-    setPaused(true)
-    setOffset((o) => o + dir * 340)
+  const [mode, setMode] = useState<'auto' | 'manual'>('auto')
+  const [index, setIndex] = useState(0)
+  const [{ half, cardFull, perView }, setMetrics] = useState({ half: 0, cardFull: 0, perView: 1 })
+
+  const maxIndex = Math.max(0, N - perView)
+
+  // Measure card + track sizes so stepping and looping stay pixel-accurate.
+  useLayoutEffect(() => {
+    function measure() {
+      const track = trackRef.current
+      const vp = viewportRef.current
+      if (!track || !vp || track.children.length === 0) return
+      const card = (track.children[0] as HTMLElement).offsetWidth
+      const cardFull = card + GAP
+      const half = track.scrollWidth / 2
+      const perView = Math.max(1, Math.round((vp.clientWidth + GAP) / cardFull))
+      setMetrics({ half, cardFull, perView })
+    }
+    measure()
+    const ro = new ResizeObserver(measure)
+    if (viewportRef.current) ro.observe(viewportRef.current)
+    return () => ro.disconnect()
+  }, [])
+
+  // Auto-glide loop (paused while hovering); seamless thanks to the duplicated track.
+  useEffect(() => {
+    if (mode !== 'auto' || reduced || half === 0) return
+    let raf = 0
+    let last = performance.now()
+    const tick = (now: number) => {
+      const dt = Math.min((now - last) / 1000, 0.05)
+      last = now
+      if (!hovering.current) {
+        let nx = x.get() - SPEED * dt
+        if (nx <= -half) nx += half
+        x.set(nx)
+      }
+      raf = requestAnimationFrame(tick)
+    }
+    raf = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(raf)
+  }, [mode, reduced, half, x])
+
+  function step(dir: -1 | 1) {
+    setMode('manual')
+    setIndex((cur) => {
+      const next = Math.min(maxIndex, Math.max(0, cur + dir))
+      animate(x, -next * cardFull, { type: 'spring', stiffness: 260, damping: 32 })
+      return next
+    })
   }
+
+  const showPrev = mode === 'manual' && index > 0
+  const showNext = mode === 'auto' || index < maxIndex
 
   return (
     <section className="overflow-hidden py-24">
@@ -81,17 +143,21 @@ export default function ReviewsMarquee() {
           <div className="hidden flex-shrink-0 gap-2 sm:flex">
             <button
               type="button"
-              onClick={() => nudge(1)}
-              aria-label="Previous reviews"
-              className="grid h-10 w-10 place-items-center rounded-full border border-brand-400/30 text-slate-200 transition-colors hover:border-brand-400 hover:bg-brand-400/10"
+              onClick={() => step(-1)}
+              aria-label="Previous review"
+              className={`grid h-10 w-10 place-items-center rounded-full border border-brand-400/30 text-slate-200 transition-all hover:border-brand-400 hover:bg-brand-400/10 ${
+                showPrev ? 'opacity-100' : 'pointer-events-none opacity-0'
+              }`}
             >
               <Icon name="chevron" className="h-5 w-5 rotate-90" />
             </button>
             <button
               type="button"
-              onClick={() => nudge(-1)}
-              aria-label="Next reviews"
-              className="grid h-10 w-10 place-items-center rounded-full border border-brand-400/30 text-slate-200 transition-colors hover:border-brand-400 hover:bg-brand-400/10"
+              onClick={() => step(1)}
+              aria-label="Next review"
+              className={`grid h-10 w-10 place-items-center rounded-full border border-brand-400/30 text-slate-200 transition-all hover:border-brand-400 hover:bg-brand-400/10 ${
+                showNext ? 'opacity-100' : 'pointer-events-none opacity-0'
+              }`}
             >
               <Icon name="chevron" className="h-5 w-5 -rotate-90" />
             </button>
@@ -99,16 +165,16 @@ export default function ReviewsMarquee() {
         </div>
       </div>
 
-      <div className="marquee-viewport marquee-mask group relative mt-14 overflow-hidden">
-        <motion.div animate={{ x: offset }} transition={{ type: 'spring', stiffness: 120, damping: 22 }}>
-          <div
-            className="marquee-track group-hover:[animation-play-state:paused]"
-            style={paused ? { animationPlayState: 'paused' } : undefined}
-          >
-            {[...reviews, ...reviews].map((review, i) => (
-              <ReviewCard key={i} review={review} />
-            ))}
-          </div>
+      <div
+        ref={viewportRef}
+        className="marquee-mask relative mt-14 overflow-hidden"
+        onMouseEnter={() => (hovering.current = true)}
+        onMouseLeave={() => (hovering.current = false)}
+      >
+        <motion.div ref={trackRef} style={{ x }} className="flex w-max gap-6">
+          {[...reviews, ...reviews].map((review, i) => (
+            <ReviewCard key={i} review={review} />
+          ))}
         </motion.div>
       </div>
     </section>

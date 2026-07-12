@@ -1,22 +1,20 @@
 import TopicArt from './Illustration'
 
 interface CardImageProps {
-  /** Path to a real image (e.g. /img/s1-06.jpg). Falls back to TopicArt. */
-  src?: string
-  alt?: string
+  /** Topic selectors — the art is generated from whichever is provided. */
+  variant?: string
+  icon?: string
   id?: string
   category?: string
+  alt?: string
   className?: string
 }
 
 /**
- * Card artwork: renders the supplied brand image when one exists, otherwise
- * falls back to the topic-relevant SVG illustration. Images are lazy-loaded
- * and cover-cropped so any aspect container works.
+ * Card artwork. Renders a topic-relevant, code-generated SVG illustration
+ * (navy / blue / white line art) chosen from the card's variant, icon, service
+ * id, or category — no photography. Cover-cropped so any aspect container works.
  */
-export default function CardImage({ src, alt = '', id, category, className = '' }: CardImageProps) {
-  if (src) {
-    return <img src={src} alt={alt} loading="lazy" className={`${className} object-cover`} />
-  }
-  return <TopicArt id={id} category={category} className={className} />
+export default function CardImage({ variant, icon, id, category, className = '' }: CardImageProps) {
+  return <TopicArt variant={variant} icon={icon} id={id} category={category} className={className} />
 }

@@ -56,7 +56,7 @@ function Services() {
               className="glass glass-hover flex h-full flex-col p-5"
             >
               <div className="overflow-hidden rounded-xl ring-1 ring-white/10">
-                <CardImage src={cat.image} alt={cat.title} id={cat.id} className="aspect-[16/9] w-full" />
+                <CardImage id={cat.id} className="aspect-[16/9] w-full" />
               </div>
               <h3 className="mt-5 font-display text-xl font-bold tracking-tight text-white">
                 {cat.title}
@@ -109,7 +109,7 @@ function PortfolioPreview() {
               className="glass glass-hover group flex h-full flex-col overflow-hidden"
             >
               <div className="relative overflow-hidden">
-                <CardImage src={p.image} alt={p.title} category={p.category} className="aspect-[16/10] w-full" />
+                <CardImage icon={p.icon} category={p.category} className="aspect-[16/10] w-full" />
                 <span className="absolute left-3 top-3 rounded-full border border-white/15 bg-ink-950/70 px-3 py-1 text-xs font-medium text-white backdrop-blur">
                   {p.category}
                 </span>

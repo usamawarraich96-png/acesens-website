@@ -58,7 +58,7 @@ function Donut({ pct = 72, size = 64 }: { pct?: number; size?: number }) {
         cy="32"
         r={r}
         fill="none"
-        stroke="#d97757"
+        stroke="#1A9DFF"
         strokeWidth="8"
         strokeLinecap="round"
         strokeDasharray={`${(c * pct) / 100} ${c}`}

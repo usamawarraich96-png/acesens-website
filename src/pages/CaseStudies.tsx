@@ -35,8 +35,7 @@ export default function CaseStudies() {
             >
               <div className="relative w-full overflow-hidden sm:w-2/5">
                 <CardImage
-                  src={p.image}
-                  alt={p.title}
+                  icon={p.icon}
                   category={p.category}
                   className="aspect-[16/10] h-full w-full"
                 />

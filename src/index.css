@@ -39,7 +39,7 @@
     @apply mx-auto w-full max-w-6xl px-6;
   }
 
-  /* Small uppercase eyebrow label — vivid orange like the reference decks */
+  /* Small uppercase eyebrow label — sky-blue accent */
   .eyebrow {
     @apply font-display text-xs font-semibold uppercase tracking-[0.28em] text-accent-400;
   }
@@ -55,7 +55,7 @@
     background-size: 200% 200%;
   }
 
-  /* Orange gradient for highlighted stats and metrics */
+  /* Blue gradient for highlighted stats and metrics */
   .gradient-stat {
     @apply bg-gradient-to-r from-accent-300 to-accent-500 bg-clip-text text-transparent;
   }

@@ -6,7 +6,7 @@ interface Particle {
   vx: number
   vy: number
   r: number
-  orange: boolean
+  alt: boolean
 }
 
 interface ParticleFieldProps {
@@ -16,12 +16,12 @@ interface ParticleFieldProps {
 }
 
 const BLUE = '79,125,247'
-const ORANGE = '217,119,87'
+const CYAN = '71,216,255'
 const LINK_DIST = 130
 
 /**
  * Ambient "live" background: slow-drifting constellation particles connected
- * by faint lines — mostly electric blue with occasional orange nodes.
+ * by faint lines — electric blue with occasional brighter cyan nodes.
  * Canvas-based and cheap: capped particle count and device-pixel ratio,
  * paused while off-screen or when the tab is hidden, and reduced to a single
  * static frame under prefers-reduced-motion.
@@ -58,7 +58,7 @@ export default function ParticleField({ density = 0.55, className = '' }: Partic
         vx: (Math.random() - 0.5) * 0.22,
         vy: (Math.random() - 0.5) * 0.22,
         r: 1 + Math.random() * 1.6,
-        orange: Math.random() < 0.35,
+        alt: Math.random() < 0.35,
       }))
     }
 
@@ -87,8 +87,8 @@ export default function ParticleField({ density = 0.55, className = '' }: Partic
 
       // nodes
       for (const p of particles) {
-        const rgb = p.orange ? ORANGE : BLUE
-        ctx!.fillStyle = `rgba(${rgb},${p.orange ? 0.75 : 0.55})`
+        const rgb = p.alt ? CYAN : BLUE
+        ctx!.fillStyle = `rgba(${rgb},${p.alt ? 0.7 : 0.55})`
         ctx!.beginPath()
         ctx!.arc(p.x, p.y, p.r, 0, Math.PI * 2)
         ctx!.fill()

@@ -24,8 +24,7 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
     >
       <div className="relative overflow-hidden">
         <CardImage
-          src={project.image}
-          alt={project.title}
+          icon={project.icon}
           category={project.category}
           className="aspect-[16/10] w-full"
         />

@@ -114,7 +114,7 @@ export default function Navbar() {
           <div className="hidden lg:block">
             <Link to="/contact" className="btn-ghost group !px-5 !py-2.5">
               Let's Talk
-              <span className="h-2 w-2 rounded-full bg-accent-500 shadow-[0_0_10px_2px_rgba(255,122,26,0.6)] transition-transform group-hover:scale-125" />
+              <span className="h-2 w-2 rounded-full bg-brand-400 shadow-[0_0_10px_2px_rgba(26,157,255,0.6)] transition-transform group-hover:scale-125" />
             </Link>
           </div>
 

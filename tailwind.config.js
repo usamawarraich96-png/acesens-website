@@ -31,14 +31,15 @@ export default {
           800: '#124b7d',
           900: '#123c63',
         },
-        // Vivid orange — emphasis, hover, key metrics only
+        // Sky blue — secondary emphasis, hover, key metrics (no orange in the
+        // palette; a lighter, cooler blue than `brand` for gentle two-tone).
         accent: {
-          100: '#ffe8d5',
-          200: '#ffcba3',
-          300: '#ffab6b',
-          400: '#ff9440',
-          500: '#FF7A1A',
-          600: '#e5630c',
+          100: '#e0f2ff',
+          200: '#b9e4ff',
+          300: '#8ad2ff',
+          400: '#5cbdff',
+          500: '#38a9f5',
+          600: '#1f8fd6',
         },
         // Chrome tones for the logo/metallic accents
         chrome: {
@@ -65,7 +66,7 @@ export default {
       },
       boxShadow: {
         glow: '0 0 44px -8px rgba(26,157,255,0.55)',
-        'glow-accent': '0 0 34px -8px rgba(255,122,26,0.55)',
+        'glow-accent': '0 0 34px -8px rgba(56,169,245,0.55)',
         glass:
           '0 18px 50px -18px rgba(0,0,0,0.75), inset 0 1px 0 0 rgba(255,255,255,0.14)',
         'glass-lg':
@@ -75,7 +76,7 @@ export default {
         'grid-fade':
           'linear-gradient(to right, rgba(26,157,255,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(26,157,255,0.06) 1px, transparent 1px)',
         'circuit':
-          'radial-gradient(circle at 18% 18%, rgba(26,157,255,0.14), transparent 42%), radial-gradient(circle at 82% 62%, rgba(255,122,26,0.09), transparent 42%)',
+          'radial-gradient(circle at 18% 18%, rgba(26,157,255,0.14), transparent 42%), radial-gradient(circle at 82% 62%, rgba(56,169,245,0.10), transparent 42%)',
       },
       keyframes: {
         float: {
